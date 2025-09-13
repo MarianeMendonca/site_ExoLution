@@ -57,7 +57,7 @@ form::-webkit-scrollbar-thumb:hover {
 form h2.titulo {
     margin: 0 0 15px;
     text-align: center;
-    /*font-size: 1.8rem;*/
+    font-size: 1.8rem;
     font-weight: 600;
     color: #28a745;
     font-family: "Delius", cursive;
