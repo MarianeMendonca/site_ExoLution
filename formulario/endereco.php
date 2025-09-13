@@ -66,7 +66,7 @@
     <label for="pais">País:</label>
     <input type="text" id="pais" name="pais" value="Brasil" required>
 
-    <div class="botoes">
+  <div class="botoes">
     <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
     <input type="submit" value="Cadastrar Endereço" class="btn-cadastrar">
   </div>
