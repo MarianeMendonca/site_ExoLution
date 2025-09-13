@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz@8..144&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders:opsz,wght@10..72,100..900&family=Dancing+Script:wght@400..700&family=Delius&family=Sarpanch:wght@400;500;600;700;800;900&display=swap');
+
+body{
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: "Roboto Flex", sans-serif;
+}
+header#cabecalho nav.navbar{
+    position:fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1030;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+header#cabecalho nav.navbar div.container-fluid div.nome{
+    display: flex;
+    margin-top: -10px;
+    gap: 10px;
+}
+header#cabecalho nav.navbar div.container-fluid div.nome img{
+    width: 70px;
+    height: 70px;
+    margin-right: 50px;
+}
+/*header#cabecalho nav.navbar div.container-fluid div.nome a.navbar-brand{
+    margin: 0;
+}*/
+header#cabecalho nav.navbar div.container-fluid div.collapse ul.navbar-nav{
+    margin-top: 35px;
+    margin-left: -30px;
+}
+header#cabecalho nav.navbar div.container-fluid div.collapse ul.navbar-nav li.nav-item{
+    margin-right: 15px;
+}
+header#cabecalho nav.navbar div.container-fluid div.collapse form.d-flex{
+    margin-top: -35px;
+}
+
+header#cabecalho nav.navbar div.container-fluid div#carrinho img{
+    width: 30px;
+    height: 30px;
+    margin-top: -38px;
+    margin-right: 20px;
+}
+
+header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group{
+    display: flex;
+    /*align-items: center;*/
+    background-color: #ffffff;
+    padding: 8px 16px 8px 8px;
+    border-radius: 24px;
+    gap: 8px;
+    width: 300px;
+}
+header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group div.input-icon{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 100%;
+    min-width: 32px;
+    min-height: 32px;
+    background-color: rgb(80, 154, 80);
+}
+header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group div.input-icon img{
+    width: 17px;
+    height: 17px;
+}
+header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group input.input-field{
+    width: 85%;
+    border: none;
+    background-color: transparent;
+}
+header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group input.input-field:focus{
+    outline: none;
+}
