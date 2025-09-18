@@ -6,11 +6,19 @@
     <title>Cadastro de Produto</title>
     <link rel="shortcut icon"  href="../imagem/logo.png" >
     <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
+    <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
+    <link rel="stylesheet" type="text/css" href="../css/menu.css" >
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
         <source src="../video/mar.mp4" type="video/mp4">
     </video>
+
+    <?php
+        if (file_exists('../hF/header.php')){
+            include '../hF/header.php'; 
+        }
+    ?>
 
     <form action="#" method="post" enctype="multipart/form-data">
         <h2 class="titulo">Cadastro de Produto</h2>
