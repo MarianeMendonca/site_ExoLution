@@ -44,8 +44,12 @@ header#cabecalho nav.navbar div.container-fluid div.collapse form.d-flex{
 header#cabecalho nav.navbar div.container-fluid div#carrinho img{
     width: 30px;
     height: 30px;
-    margin-top: -38px;
-    margin-right: 20px;
+}
+header#cabecalho nav.navbar div.container-fluid div.carrinho-pesquisa {
+  display: flex;          /* coloca os filhos lado a lado */
+  flex-direction: row;    /* garante que fiquem em linha */
+  align-items: center;    /* centraliza verticalmente */
+  gap: 15px;              /* espaço entre carrinho e pesquisa */
 }
 
 header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group{

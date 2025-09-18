@@ -26,18 +26,30 @@
                         <a class="nav-link" href="#">Perfil</a>
                         </li>
                     </ul>
-                    <div id="carrinho">
+                    <!--<div id="carrinho">
                         <img src="imagem/carrinho.png">
                     </div>
-                    <!--<form class="d-flex" role="search">
+                    <form class="d-flex" role="search">
                         <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"/>
                         <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                    </form>!-->
+                    </form>
                     <div class="input-group">
                         <div class="input-icon">
                             <img src="imagem/pesquisa.png" alt="PesquisaS">
                         </div>
                         <input id="search" type="text" class="input-field" placeholder="Pesquisar">
+                    </div>!-->
+                    <div class="carrinho-pesquisa">
+                        <div id="carrinho">
+                            <img src="imagem/carrinho.png" alt="Carrinho" />
+                        </div>
+
+                        <div class="input-group">
+                        <div class="input-icon">
+                            <img src="imagem/pesquisa.png" alt="PesquisaS">
+                        </div>
+                        <input id="search" type="text" class="input-field" placeholder="Pesquisar">
+                    </div>
                     </div>
                 </div>
             </div>
