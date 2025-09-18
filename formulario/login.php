@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cadastro</title>
+    <title>Login</title>
     <link rel="shortcut icon"  href="../imagem/logo.png" >
     <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
 </head>
@@ -11,24 +11,9 @@
     <video id="background-video" autoplay loop muted>
         <source src="../video/video_cadastro.mp4" type="video/mp4">
     </video>
-    <form action="#" method="post">
-        <h2 class="titulo">Cadastro</h2>
 
-        <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome" required>
-
-        <label for="cpf">CPF:</label>
-        <input type="text" id="cpf" name="cpf" 
-               pattern="\d{11}" 
-               maxlength="11"
-               placeholder="Somente números (11 dígitos)" 
-               required>
-
-        <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="Somente números" required>
-
-        <label for="nascimento">Data de nascimento:</label>
-        <input type="text" id="nascimento" name="nascimento" required>
+    <form action="#" method="post"> 
+        <h2 class="titulo">Login</h2>
 
         <label for="email">E-mail:</label>
         <input type="text" id="email" name="email" required>
@@ -41,7 +26,7 @@
 
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-            <input type="submit" value="Cadastrar" class="btn-cadastrar">
+            <input type="submit" value="Entrar" class="btn-cadastrar">
         </div>
     </form>
 
