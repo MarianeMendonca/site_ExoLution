@@ -9,7 +9,7 @@
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
-        <source src="../video/video_cadastro.mp4" type="video/mp4">
+        <source src="../video/mar.mp4" type="video/mp4">
     </video>
     <form action="#" method="post">
         <h2 class="titulo">Cadastro</h2>
