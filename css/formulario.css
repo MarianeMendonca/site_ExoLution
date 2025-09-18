@@ -74,6 +74,7 @@ form input[type="text"],
 form input[type="number"],
 form textarea#descricao,
 form div.upload-container input[type="file"],
+form div.senha-container input[type="password"],
 form select {
     width: 100%;
     padding: 10px;
@@ -89,11 +90,32 @@ form input[type="text"]:focus,
 form input[type="number"]:focus,
 form textarea#descricao:focus,
 form div.upload-container input[type="file"]:focus,
+form div.senha-container input[type="password"]:focus,
 form select:focus {
     outline: none;
     border-color: #28a745;
     box-shadow: 0 0 6px rgba(40, 167, 69, 0.5);
 }
+
+/*Exclusivo de cadastro.php e login.php*/
+form div.senha-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+form div.senha-container input#senha {
+    width: 100%;
+    padding-right: 40px; /* espaço pro ícone */
+}
+
+form div.senha-container span.toggle-senha {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    font-size: 18px;
+    user-select: none;
+}
+/*Até aqui*/
 
 form input[type="submit"] {
     margin-top: 18px;

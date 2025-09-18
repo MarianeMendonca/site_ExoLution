@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Endereço</title>
-    <link rel="stylesheet" type="text/css" href="../css/endereco.css" >
+    <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
 </head>
 <body>
   <video id="background-video" autoplay loop muted>

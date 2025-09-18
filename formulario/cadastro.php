@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro</title>
-    <link rel="stylesheet" type="text/css" href="../css/cadastro.css" >
+    <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
@@ -24,13 +24,13 @@
                required>
 
         <label for="telefone">Telefone:</label>
-        <input type="tel" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="Somente números" required>
+        <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="Somente números" required>
 
         <label for="nascimento">Data de nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento" required>
+        <input type="text" id="nascimento" name="nascimento" required>
 
         <label for="email">E-mail:</label>
-        <input type="email" id="email" name="email" required>
+        <input type="text" id="email" name="email" required>
 
         <label for="senha">Senha:</label>
         <div class="senha-container">

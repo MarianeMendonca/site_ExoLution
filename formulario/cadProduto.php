@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Produto</title>
-    <link rel="stylesheet" type="text/css" href="../css/cadProduto.css" >
+    <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
@@ -12,7 +12,7 @@
     </video>
 
     <form action="#" method="post" enctype="multipart/form-data">
-        <h2>Cadastro de Produto</h2>
+        <h2 class="titulo">Cadastro de Produto</h2>
 
         <label for="nome">Nome do produto:</label>
         <input type="text" id="nome" name="nome" required>
