@@ -31,10 +31,34 @@
 
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Produtos</a>
+
+                            <?php
+                                $pag = basename($_SERVER['PHP_SELF']);
+                                if($pag === 'produtos.php'){
+                                    echo '<a class="nav-link active" aria-current="page" href="#">Produtos</a>';
+                                }else if($pag === 'index.php'){
+                                    echo '<a class="nav-link" href="paginas/produtos.php">Produtos</a>';
+                                }else{
+                                    echo '<a class="nav-link" href="../paginas/produtos.php">Produtos</a>';
+                                }
+                            ?>
+
+                        <!--<a class="nav-link" href="#">Produtos</a>-->
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Categorias</a>
+
+                            <?php
+                                $pag = basename($_SERVER['PHP_SELF']);
+                                if($pag === 'categorias.php'){
+                                    echo '<a class="nav-link active" aria-current="page" href="#">Categorias</a>';
+                                }else if($pag === 'index.php'){
+                                    echo '<a class="nav-link" href="paginas/categorias.php">Categorias</a>';
+                                }else{
+                                    echo '<a class="nav-link" href="../paginas/categorias.php">Categorias</a>';
+                                }
+                            ?>
+
+                        <!--<a class="nav-link" href="#">Categorias</a>-->
                         </li>
                         <li class="nav-item">
 
@@ -51,7 +75,18 @@
 
                         </li>
                         <li class="nav-item">
-                        <a class="nav-link" href="#">Perfil</a>
+                            <?php
+                                $pag = basename($_SERVER['PHP_SELF']);
+                                if($pag === 'perfil.php'){
+                                    echo '<a class="nav-link active" aria-current="page" href="#">Perfil</a>';
+                                }else if($pag === 'index.php'){
+                                    echo '<a class="nav-link" href="paginas/perfil.php">Perfil</a>';
+                                }else{
+                                    echo '<a class="nav-link" href="../paginas/perfil.php">Perfil</a>';
+                                }
+                            ?>
+
+                        <!--<a class="nav-link" href="#">Perfil</a>-->
                         </li>
                     </ul>
                     <!--<div id="carrinho">

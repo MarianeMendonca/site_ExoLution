@@ -7,7 +7,7 @@
     <link rel="shortcut icon"  href="../imagem/logo.png" >
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
-    <link rel="stylesheet" type="text/css" href="../css/footer.css" >
+    <link rel="stylesheet" type="text/css" href="../css/footer2.css" >
     
 </head>
 <body>
@@ -18,7 +18,7 @@
     ?>
     <?php 
         if (file_exists('../hF/footer.php')){
-            include '../hF/footer.php'; 
+            include '../hF/footer2.php'; 
         }
     ?>
 </body>

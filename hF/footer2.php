@@ -11,9 +11,23 @@
     <div class="footer-col">
       <h4>Siga-nos</h4>
       <div class="social-links">
-        <a href="#" target="_blank"><img src="imagem/instagram.png" alt="Instagram"></a>
+        
+        <?php
+          $pag = basename($_SERVER['PHP_SELF']); // retorna só o nome, ex: "cadastro.php"
+          if($pag === 'index.php'){
+            echo '<a href="#" target="_blank"><img src="imagem/instagram.png" alt="Instagram"></a>
+                  <a href="#" target="_blank"><img src="imagem/facebook.png" alt="Facebook"></a>
+                  <a href="#" target="_blank"><img src="imagem/whatsapp.png" alt="WhatsApp"></a>';
+          }else{
+            echo '<a href="#" target="_blank"><img src="../imagem/instagram.png" alt="Instagram"></a>
+                  <a href="#" target="_blank"><img src="../imagem/facebook.png" alt="Facebook"></a>
+                  <a href="#" target="_blank"><img src="../imagem/whatsapp.png" alt="WhatsApp"></a>';
+          }
+        ?>
+
+        <!--<a href="#" target="_blank"><img src="imagem/instagram.png" alt="Instagram"></a>
         <a href="#" target="_blank"><img src="imagem/facebook.png" alt="Facebook"></a>
-        <a href="#" target="_blank"><img src="imagem/whatsapp.png" alt="WhatsApp"></a>
+        <a href="#" target="_blank"><img src="imagem/whatsapp.png" alt="WhatsApp"></a>-->
       </div>
     </div>
 
