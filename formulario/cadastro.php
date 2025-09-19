@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
+    <link rel="stylesheet" type="text/css" href="../css/footer2.css" >
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
@@ -20,6 +21,7 @@
         }
     ?>
 
+    <div class="container">
     <form action="#" method="post">
         <h2 class="titulo">Cadastro</h2>
 
@@ -53,6 +55,13 @@
             <input type="submit" value="Cadastrar" class="btn-cadastrar">
         </div>
     </form>
+    </div>
+
+    <?php 
+        if (file_exists('../hF/footer.php')){
+            include '../hF/footer2.php'; 
+        }
+    ?>
 
     <script>
         function toggleSenha() {

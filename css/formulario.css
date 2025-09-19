@@ -7,9 +7,10 @@ body {
     color: #333;
     /*overflow: hidden;*/
     display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh; /* ocupa a tela toda */
+    flex-direction: column;
+    /*justify-content: center;
+    align-items: center;*/
+    min-height: 100vh;
 }
 
 video#background-video {
@@ -22,9 +23,15 @@ video#background-video {
     z-index: -1;
     filter: blur(6px) brightness(0.6);
 }
-
+div.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    padding: 20px; /* opcional, para espaçamento */
+}
 form {
-    margin-top: 30%;
+    margin-top: 100px;
     width: 90%;
     max-width: 550px;
     background: rgba(255, 255, 255, 0.95);

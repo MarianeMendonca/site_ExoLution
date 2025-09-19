@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../css/formulario.css" >
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
+    <link rel="stylesheet" type="text/css" href="../css/footer2.css" >
 </head>
 <body>
   <video id="background-video" autoplay loop muted>
@@ -20,6 +21,7 @@
     }
   ?>
 
+  <div class="container">
   <form action="#" method="post">
     <h2 class="titulo">Cadastro de Endereço</h2>
 
@@ -82,9 +84,12 @@
   </div>
 
 </form>
+</div>
 
-  <?php
-    
+  <?php 
+    if (file_exists('../hF/footer.php')){
+      include '../hF/footer2.php'; 
+    }
   ?>
 </body>
 </html>
