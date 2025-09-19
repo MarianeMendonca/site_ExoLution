@@ -1,0 +1,79 @@
+footer#rodape {
+    background: linear-gradient(135deg, mediumseagreen, seagreen);
+    color: #fff;
+    font-family: "Roboto Flex", sans-serif;
+    padding: 40px 20px 10px 20px;
+    margin-top: 10px;
+    border-radius: 30px 30px 0 0;
+    box-shadow: 0 -4px 12px rgba(0,0,0,0.2);
+}
+
+footer#rodape div.footer-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    text-align: center;
+}
+
+footer#rodape div.footer-container div.footer-col h3, 
+footer#rodape div.footer-container div.footer-col h4 {
+    font-family: "Delius", cursive;
+    margin-bottom: 10px;
+}
+
+footer#rodape div.footer-container div.footer-col p {
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+footer#rodape div.footer-container div.footer-col div.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer#rodape div.footer-container div.footer-col div.social-links img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease, filter 0.3s ease;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.15);
+}
+
+footer#rodape div.footer-container div.footer-col div.social-links img:hover {
+    transform: scale(1.2);
+    filter: brightness(1.2);
+}
+
+footer#rodape div.footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.3);
+    margin-top: 20px;
+    padding-top: 10px;
+    font-size: 12px;
+}
+
+footer#rodape div.footer-bottom a {
+    color: #fff;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+footer#rodape div.footer-bottom a:hover {
+    color: #d0ffd0;
+}
+
+/* Marca d'água */
+div.watermark {
+    position: fixed;
+    bottom: 10px;
+    right: 20px;
+    font-size: 26px;
+    font-weight: bold;
+    color: rgba(0, 0, 0, 0.4);
+    pointer-events: none;
+    z-index: 1;
+    font-family: "Roboto Flex", sans-serif;
+}
