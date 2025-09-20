@@ -1,0 +1,204 @@
+/* Fundo e container principal */
+div.body{
+    margin: 0;
+    font-family: "Roboto Flex", sans-serif;
+    color: white;
+    /*background: linear-gradient(135deg, #064e3b, #000000, #022c22);*/
+    min-height: 100vh;
+    display: flex;
+   justify-content: center;
+    /* align-items: center;*/
+}
+
+video#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(6px) brightness(0.6);
+}
+
+div.container {
+    color: white;
+    margin-top: 120px;
+    margin-bottom: 40px;
+    max-width: 1000px;
+    width: 90%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+div.container div.profile-header {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+}
+
+div.container div.profile-header img.avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    border: 4px solid #34d399;
+    box-shadow: 0 0 15px #34d399;
+}
+
+div.container div.profile-header div.profile-info {
+    margin-left: 20px;
+}
+
+div.container div.profile-header div.profile-info h1 {
+    margin: 0;
+    font-size: 24px;
+    font-family: "Delius", cursive;
+}
+
+div.container div.profile-header div.profile-info p.role {
+    color: #6ee7b7;
+    margin: 5px 0;
+}
+
+div.container div.profile-header div.profile-info span.since {
+    font-size: 14px;
+    color: #ccc;
+}
+
+/* Botões */
+.btn {
+    background: #34d399;
+    color: black;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 10px;
+    /*font-weight: bold;*/
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: auto;
+}
+.btnE{
+    color: black;
+    padding: 8px 18px;
+    border: none;
+    border-radius: 10px;
+    /*font-weight: bold;*/
+    cursor: pointer;
+    transition: 0.3s;
+    margin-left: auto; 
+}
+
+.btn:hover {
+    background: #5df0b5;
+}
+.btnE:hover{
+    background: #f32e2e;
+}
+
+div.card div.carrinho div.recommendation div.button{
+    display: flex;
+    flex-direction: column; /* coloca em coluna */
+    gap: 12px;
+}
+
+.btn.full {
+    width: 100%;
+    margin-top: 15px;
+    margin-top: auto;
+    background: linear-gradient(90deg, #34d399, #22d3ee);
+}
+
+.btn.gradient {
+    background: linear-gradient(90deg, #35d299, #01ddff);
+}
+
+.btn.small {
+    padding: 6px 12px;
+    font-size: 14px;
+    width: 85px;
+}
+
+/* Grid de cards */
+div.container div.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+div.container div.grid div.card {
+    background: rgba(6, 78, 59, 0.4);
+    border-radius: 15px;
+    padding: 20px;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    display: flex;          /* vira flex container */
+    flex-direction: column; /* organiza em coluna */
+    height: 300px;
+}
+
+.card h2 {
+    margin-top: 0;
+    margin-bottom: 15px;
+    color: #6ee7b7;
+    font-size: 18px;
+    font-weight: bold;
+    font-family: "Delius", cursive;
+}
+
+.list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    height: 170px;
+}
+
+.list li {
+    color: white;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.list.small span.date {
+    color: #bbb;
+    font-size: 13px;
+}
+
+.delete{
+    background-color: #e40202;
+    padding: 6px 12px;
+    font-size: 14px;
+    width: 85px;
+}
+
+.recommendation {
+    color: white;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+div.card div.carrinho{
+    flex: 1;                 /* ocupa o espaço disponível dentro do card */
+    max-height: 170px;       /* limite da altura do conteúdo */
+    overflow-y: auto;        /* ativa scroll vertical se ultrapassar */
+    padding-right: 5px;      /* espaço p/ não colar na barra */
+    border-radius: 10px;
+}
+
+.carrinho::-webkit-scrollbar {
+    width: 6px;
+}
+.carrinho::-webkit-scrollbar-thumb {
+    background: #34d399;
+    border-radius: 10px;
+}
