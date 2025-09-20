@@ -117,6 +117,9 @@ div.card div.carrinho div.recommendation div.button{
 .btn.gradient {
     background: linear-gradient(90deg, #35d299, #01ddff);
 }
+.btn.gradient:hover{
+    color: white;
+}
 
 .btn.small {
     padding: 6px 12px;
@@ -201,4 +204,9 @@ div.card div.carrinho{
 .carrinho::-webkit-scrollbar-thumb {
     background: #34d399;
     border-radius: 10px;
+}
+
+a {
+  color: inherit;       /* herda a cor do elemento pai */
+  text-decoration: none; /* tira o sublinhado */
 }

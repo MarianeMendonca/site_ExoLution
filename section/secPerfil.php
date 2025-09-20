@@ -105,7 +105,9 @@
                         </div>
                     </div>
                 </div>
-                <button class="btn full gradient">+ Adicionar Endereço</button>
+                <a href="../formulario/endereco.php">
+                    <button class="btn full gradient">+ Adicionar Endereço</button>
+                </a>
             </div>
 
         </div>
