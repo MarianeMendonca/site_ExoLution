@@ -14,13 +14,14 @@ header#cabecalho nav.navbar{
     left: 0;
     right: 0;
     z-index: 1030;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255);
+    backdrop-filter: blur(5px);
 }
 header#cabecalho nav.navbar div.container-fluid div.nome{
     display: flex;
     margin-top: -10px;
     gap: 10px;
+    border: 2px solid #34d399; /* borda verde ExoLution */
 }
 header#cabecalho nav.navbar div.container-fluid div.nome img{
     width: 70px;
