@@ -29,7 +29,7 @@
             </div>
 
             <div class="card">
-                <h2>Chats</h2>
+                <h2>Perguntas</h2>
                 <ul class="list small">
                     <li>
                         <span>Cuidados com a Arara</span>
@@ -40,8 +40,27 @@
                         <span class="date">05/08/2025</span>
                     </li>
                 </ul>
-                <button class="btn full gradient">Novo Chat</button>
-                <button class="btn full gradient" style="margin-top: 10px;">Chats Antigos</button>
+                <button class="btn full gradient">Nova Pergunta</button>
+            </div>
+
+            <div class="card">
+                <h2>Perguntas Pendentes</h2>
+                <div class="carrinho" style="max-height: 250px;">
+                    <ul class="list small">
+                        <li>
+                            <span>Cuidados com a Arara</span>
+                            <span class="date">12/09/2025</span>
+                        </li>
+                        <li>
+                            <span>Exame do Dragão-Barbudo</span>
+                            <span class="date">05/08/2025</span>
+                        </li>
+                        <li>
+                            <span>Exame do Dragão-Barbudo</span>
+                            <span class="date">05/08/2025</span>
+                        </li>
+                    </ul>
+                </div>
             </div>
 
             <div class="card">
