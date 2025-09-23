@@ -8,12 +8,18 @@
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
     <link rel="stylesheet" type="text/css" href="../css/footer2.css" >
+    <link rel="stylesheet" type="text/css" href="../css/categorias.css">
     
 </head>
 <body>
     <?php 
         if (file_exists('../hF/header.php')){
             include '../hF/header.php'; 
+        }
+    ?>
+    <?php 
+        if (file_exists('../section/secCategoria.php')){
+            include '../section/secCategoria.php'; 
         }
     ?>
     <?php 
