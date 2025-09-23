@@ -40,7 +40,9 @@
                         <span class="date">05/08/2025</span>
                     </li>
                 </ul>
-                <button class="btn full gradient">Nova Pergunta</button>
+                <a href="Mensagem.php">
+                    <button class="btn full gradient">Nova Pergunta</button>
+                </a>
             </div>
 
             <div class="card">
