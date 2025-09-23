@@ -34,6 +34,10 @@
             <span class="toggle-senha" onclick="toggleSenha()">👁️</span>
         </div>
 
+        <p class="cadastro" style="text-align: center; margin-top: 25px; font-size: 14px;">Não possui cadastro? 
+            <a href="cadastro.php" style="color: #28a745">Cadastrar</a>
+        </p>
+
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
             <input type="submit" value="Entrar" class="btn-cadastrar">
