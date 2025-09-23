@@ -1,0 +1,76 @@
+html, body {
+    margin: 0;
+    padding: 0;
+}
+section {
+    background-color: #12c9a7;
+    padding: 80px;
+    margin-bottom: -33px;
+}
+
+div.product-container {
+    max-width: 1200px;
+    margin: 50px auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+img.product-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+div.product-details {
+    margin-top: 20px;
+}
+
+div.product-details h1 {
+    font-size: 2.5rem;
+    color: #333;
+    font-family: "Delius", cursive;
+}
+
+div.product-details p.description {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+div.product-info {
+    margin-top: 20px;
+}
+
+div.product-info div {
+    margin-bottom: 10px;
+}
+
+div.product-info span {
+    font-weight: bold;
+    color: #444;
+}
+
+button.btn{
+    padding: 12px 25px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: background 0.3s ease;
+}
+button.buy{
+    background-color: #00b894;
+    color: #fff;
+}
+button.carrinho{
+    background-color: #00b872;
+    color: #fff;
+}
+button.buy:hover {
+    background-color: #019170;
+}
+button.carrinho:hover{
+    background-color: #019170;
+}
