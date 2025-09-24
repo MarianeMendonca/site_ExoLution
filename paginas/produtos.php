@@ -8,6 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
     <link rel="stylesheet" type="text/css" href="../css/footer2.css" >
+    <link rel="stylesheet" type="text/css" href="../css/secProduto.css" >
     
 </head>
 <body>
@@ -17,8 +18,14 @@
         }
     ?>
     <?php 
+        if (file_exists('../section/secProduto.php')){
+            include '../section/secProduto.php'; 
+        }
+    ?>
+    <?php 
         if (file_exists('../hF/footer.php')){
             include '../hF/footer2.php'; 
         }
     ?>
+    <script src="../bootstrap/bootstrap.js"></script>
 </body>

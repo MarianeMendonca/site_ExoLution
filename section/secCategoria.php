@@ -54,6 +54,11 @@
 
             <a href="#" class="card mamiferos">
                 <div class="overlay"></div>
+                <h2>Anfíbios</h2>
+            </a>
+
+            <a href="#" class="card mamiferos">
+                <div class="overlay"></div>
                 <h2>Mamíferos</h2>
             </a>
         </div>
