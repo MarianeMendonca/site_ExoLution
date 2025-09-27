@@ -71,26 +71,26 @@
                     <div class="recommendation">
                         <span>Ração premium para répteis</span>
                         <div class="button">
-                            <button class="btn small">Comprar</button>
+                            <button class="btn small"><a href="../formulario/confCompra.php">Comprar</a></button>
                             <button class="btnE delete">Excluir</button>
                         </div>
                     </div>
                     <div class="recommendation">
                         <span>Brinquedo interativo para aves</span>
                         <div class="button">
-                            <button class="btn small">Comprar</button>
+                            <button class="btn small"><a href="../formulario/confCompra.php">Comprar</a></button>
                             <button class="btnE delete">Excluir</button>
                         </div>
                     </div>
                     <div class="recommendation">
                         <span>Brinquedo interativo para aves</span>
                         <div class="button">
-                            <button class="btn small">Comprar</button>
+                            <button class="btn small"><a href="../formulario/confCompra.php">Comprar</a></button>
                             <button class="btnE delete">Excluir</button>
                         </div>
                     </div>
                 </div>
-                <button class="btn full gradient">Comprar tudo</button>
+                <button class="btn full gradient"><a href="../formulario/confCompra.php">Comprar tudo</a></button>
             </div>
 
             <div class="card">
