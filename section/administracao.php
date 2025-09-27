@@ -28,7 +28,7 @@
                 <h2>Produtos</h2>
             </a>
 
-            <a href="#" class="card outros">
+            <a href="tabela.php" class="card outros">
                 <div class="overlay"></div>
                 <h2>Compras</h2>
             </a>

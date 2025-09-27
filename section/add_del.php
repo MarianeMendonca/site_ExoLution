@@ -8,7 +8,7 @@
                 <h2>Adicionar</h2>
             </a>
 
-            <a href="#" class="card delete">
+            <a href="tabela.php" class="card delete">
                 <div class="overlay"></div>
                 <h2>Existentes</h2>
             </a>
