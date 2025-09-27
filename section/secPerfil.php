@@ -12,8 +12,8 @@
                 <p class="role">Tutor(a) de animais exóticos</p>
                 <span class="since">Membro desde: 2023</span>
             </div>
-            <button class="btn" id="adm">Administração</button>
-            <button class="btn">Editar Perfil</button>
+            <button class="btn" id="adm"><a href="../paginas/administracao.php">Administração</a></button>
+            <button class="btn"><a href="../formulario/edicaoUsuario.php">Editar Perfil</a></button>
         </div>
 
         <div class="grid">
@@ -25,7 +25,7 @@
                     <li>Arara Azul (Luna)</li>
                     <li>Píton Real (Naga)</li>
                 </ul>
-                <button class="btn full">+ Adicionar Animal</button>
+                <button class="btn full"><a href="../formulario/cadastroAnimal.php">+ Adicionar Animal</a></button>
             </div>
 
             <div class="card">
@@ -41,7 +41,7 @@
                     </li>
                 </ul>
                 <a href="Mensagem.php">
-                    <button class="btn full gradient">Nova Pergunta</button>
+                    <button class="btn full gradient"><a href="../paginas/mensagem.php">Nova Pergunta</a></button>
                 </a>
             </div>
 
@@ -127,7 +127,7 @@
                     </div>
                 </div>
                 <a href="../formulario/endereco.php">
-                    <button class="btn full gradient">+ Adicionar Endereço</button>
+                    <button class="btn full gradient"><a href="../formulario/endereco.php">+ Adicionar Endereço</a></button>
                 </a>
             </div>
 
