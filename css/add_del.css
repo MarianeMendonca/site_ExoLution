@@ -76,6 +76,5 @@ div.grid-categorias a.card:hover div.overlay {
   background: rgba(0,0,0,0.2);
 }
 
-/* ===== Backgrounds das categorias ===== */
-.add { background-image: url('../imagem/roupas.png'); }
-.delete { background-image: url('../imagem/brinquedos.png'); }
+.add { background-color: green; }
+.delete { background-color: red; }

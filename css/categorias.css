@@ -116,6 +116,7 @@ div.grid-categorias a.card:hover div.overlay {
 .outros { background-image: url('../imagem/outros.png'); }
 
 .aves { background-image: url('../imagem/aves.png'); }
-.repteis { background-image: url('../imagem/repteis.jpg'); }
-.mamiferos { background-image: url('../imagem/mamiferos.jpg'); }
-.peixes { background-image: url('../imagem/peixes.jpg'); }
+.repteis { background-image: url('../imagem/escamas.png'); }
+.anfibios { background-image: url('../imagem/anfibio.png'); }
+.mamiferos { background-image: url('../imagem/pelos.png'); }
+.peixes { background-image: url('../imagem/peixes.png'); }

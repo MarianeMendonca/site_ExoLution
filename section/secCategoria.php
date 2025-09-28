@@ -52,7 +52,7 @@
                 <h2>Peixes</h2>
             </a>
 
-            <a href="#" class="card mamiferos">
+            <a href="#" class="card anfibios">
                 <div class="overlay"></div>
                 <h2>Anfíbios</h2>
             </a>
