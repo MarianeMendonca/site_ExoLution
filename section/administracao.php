@@ -18,7 +18,7 @@
                 <h2>Fornecedores</h2>
             </a>
 
-            <a href="#" class="card encomendas">
+            <a href="tabela.php" class="card encomendas">
                 <div class="overlay"></div>
                 <h2>Encomendas</h2>
             </a>
