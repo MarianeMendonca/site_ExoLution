@@ -1,6 +1,7 @@
 Professor Vinicius:
 
-Tabelas prontas no Banco de Dados: Usuario, Endereco, Funcionarios.
+Tabelas prontas no Banco de Dados: Usuario, Endereco.
+A tabela 'produto' está parcialmente feita.
 
 Professora Janaína: 
 

@@ -22,11 +22,11 @@
   ?>
 
   <div class="container">
-  <form action="#" method="post">
+  <form action="../bd/funcoes.php" method="post">
     <h2 class="titulo">Cadastro de Endereço</h2>
 
     <label for="cep">CEP:</label>
-    <input type="text" id="cep" name="cep" pattern="\d{5}-?\d{3}" placeholder="Ex: 12345-678" required>
+    <input type="text" id="cep" name="cep" placeholder="Somente números" required>
 
     <label for="rua">Rua / Logradouro:</label>
     <input type="text" id="rua" name="rua" required>
@@ -80,7 +80,7 @@
 
   <div class="botoes">
     <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-    <input type="submit" value="Cadastrar Endereço" class="btn-cadastrar">
+    <input type="submit" name="cadEndereco" value="Cadastrar Endereço" class="btn-cadastrar">
   </div>
 
 </form>

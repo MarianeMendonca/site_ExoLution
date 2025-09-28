@@ -29,9 +29,6 @@ header#cabecalho nav.navbar div.container-fluid div.nome img{
     box-shadow: 0 0 15px rgba(0,0,0,0.1); /* sombra externa suave */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
-/*header#cabecalho nav.navbar div.container-fluid div.nome a.navbar-brand{
-    margin: 0;
-}*/
 header#cabecalho nav.navbar div.container-fluid div.collapse ul.navbar-nav{
     margin-top: 35px;
     margin-left: -30px;
@@ -49,15 +46,14 @@ header#cabecalho nav.navbar div.container-fluid div#carrinho img{
     height: 30px;
 }
 header#cabecalho nav.navbar div.container-fluid div.carrinho-pesquisa {
-  display: flex;          /* coloca os filhos lado a lado */
-  flex-direction: row;    /* garante que fiquem em linha */
-  align-items: center;    /* centraliza verticalmente */
-  gap: 15px;              /* espaço entre carrinho e pesquisa */
+  display: flex;          
+  flex-direction: row;    
+  align-items: center;    
+  gap: 15px;              
 }
 
 header#cabecalho nav.navbar div.container-fluid div.collapse div.input-group{
     display: flex;
-    /*align-items: center;*/
     background-color: #ffffff;
     padding: 8px 16px 8px 8px;
     border-radius: 24px;

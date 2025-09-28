@@ -5,11 +5,8 @@ body {
     margin: 0;
     font-family: "Roboto Flex", sans-serif;
     color: #333;
-    /*overflow: hidden;*/
     display: flex;
     flex-direction: column;
-    /*justify-content: center;
-    align-items: center;*/
     min-height: 100vh;
 }
 
@@ -28,7 +25,6 @@ div.container{
     justify-content: center;
     align-items: center;
     flex: 1;
-    padding: 20px; /* opcional, para espaçamento */
 }
 form {
     margin-top: 100px;
@@ -40,27 +36,8 @@ form {
     box-shadow: 0 8px 25px rgba(0,0,0,0.35);
     backdrop-filter: blur(5px);
     animation: fadeIn 1s ease-in-out;
-   /* max-height: 90vh;  nunca passa da tela */
-    /*overflow-y: auto; /* scroll interno */
-    /*scrollbar-width: thin; /* Firefox */
-    /*scrollbar-color: #28a745 #eaeaea; /* Firefox */
 }
 
-/* Scroll estilizado (Chrome, Edge, Safari) */
-/*form::-webkit-scrollbar {
-    width: 8px;
-}
-form::-webkit-scrollbar-track {
-    background: #eaeaea;
-    border-radius: 10px;
-}
-form::-webkit-scrollbar-thumb {
-    background: #28a745;
-    border-radius: 10px;
-}
-form::-webkit-scrollbar-thumb:hover {
-    background: #218838;
-}*/
 
 form h2.titulo {
     margin: 0 0 15px;
@@ -105,7 +82,6 @@ form select:focus {
     box-shadow: 0 0 6px rgba(40, 167, 69, 0.5);
 }
 
-/*Exclusivo de cadastro.php e login.php*/
 form div.senha-container {
     position: relative;
     display: flex;
@@ -113,7 +89,7 @@ form div.senha-container {
 }
 form div.senha-container input#senha {
     width: 100%;
-    padding-right: 40px; /* espaço pro ícone */
+    padding-right: 40px; 
 }
 
 form div.senha-container span.toggle-senha {
@@ -123,7 +99,6 @@ form div.senha-container span.toggle-senha {
     font-size: 18px;
     user-select: none;
 }
-/*Até aqui*/
 
 form input[type="submit"] {
     margin-top: 18px;
@@ -170,7 +145,7 @@ form div.botoes button.btn-voltar:hover {
 }
 
 form div.botoes button.btn-cadastrar {
-    flex: 1; /* ocupa todo o espaço livre */
+    flex: 1; 
     padding: 12px;
     background: linear-gradient(135deg, #28a745, #218838);
     color: #fff;
@@ -247,6 +222,18 @@ ul.lista-produtos li {
     box-shadow: 0 5px 15px rgba(0, 179, 155, 0.4);
 }
 
+.preview {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.preview img {
+    max-width: 100%;   
+    max-height: 200px; 
+    border-radius: 10px;
+    object-fit: contain;
+    display: none; 
+}
 
 
 /* Animação de entrada */

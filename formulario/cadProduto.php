@@ -22,7 +22,7 @@
     ?>
 
     <div class="container">
-    <form action="#" method="post" enctype="multipart/form-data">
+    <form action="../bd/funcoes.php" method="post" enctype="multipart/form-data">
         <h2 class="titulo">Cadastro de Produto</h2>
 
         <label for="nome">Nome do produto:</label>
@@ -59,7 +59,7 @@
 
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-            <input type="submit" value="Cadastrar Produto" class="btn-cadastrar">
+            <input type="submit" name="cadastrarproduto" value="Cadastrar Produto" class="btn-cadastrar">
         </div>
     </form>
     </div>

@@ -1,13 +1,10 @@
-/* Fundo e container principal */
 div.body{
     margin: 0;
     font-family: "Roboto Flex", sans-serif;
     color: white;
-    /*background: linear-gradient(135deg, #064e3b, #000000, #022c22);*/
     min-height: 100vh;
     display: flex;
    justify-content: center;
-    /* align-items: center;*/
 }
 
 video#background-video {
@@ -71,14 +68,12 @@ div.container div.profile-header div.profile-info span.since {
     color: #ccc;
 }
 
-/* Botões */
 .btn {
     background: #34d399;
     color: black;
     padding: 8px 18px;
     border: none;
     border-radius: 10px;
-    /*font-weight: bold;*/
     cursor: pointer;
     transition: 0.3s;
     margin-left: auto;
@@ -88,7 +83,6 @@ div.container div.profile-header div.profile-info span.since {
     padding: 8px 18px;
     border: none;
     border-radius: 10px;
-    /*font-weight: bold;*/
     cursor: pointer;
     transition: 0.3s;
     margin-left: auto; 
@@ -103,7 +97,7 @@ div.container div.profile-header div.profile-info span.since {
 
 div.card div.carrinho div.recommendation div.button{
     display: flex;
-    flex-direction: column; /* coloca em coluna */
+    flex-direction: column; 
     gap: 12px;
 }
 
@@ -127,7 +121,6 @@ div.card div.carrinho div.recommendation div.button{
     width: 85px;
 }
 
-/* Grid de cards */
 div.container div.grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -139,8 +132,8 @@ div.container div.grid div.card {
     border-radius: 15px;
     padding: 20px;
     border: 1px solid rgba(52, 211, 153, 0.3);
-    display: flex;          /* vira flex container */
-    flex-direction: column; /* organiza em coluna */
+    display: flex;          
+    flex-direction: column; 
     height: 300px;
 }
 
@@ -191,10 +184,10 @@ div.container div.grid div.card {
 }
 
 div.card div.carrinho{
-    flex: 1;                 /* ocupa o espaço disponível dentro do card */
-    max-height: 170px;       /* limite da altura do conteúdo */
-    overflow-y: auto;        /* ativa scroll vertical se ultrapassar */
-    padding-right: 5px;      /* espaço p/ não colar na barra */
+    flex: 1;                 
+    max-height: 170px;       
+    overflow-y: auto;        
+    padding-right: 5px;      
     border-radius: 10px;
 }
 
@@ -207,6 +200,6 @@ div.card div.carrinho{
 }
 
 a {
-  color: inherit;       /* herda a cor do elemento pai */
-  text-decoration: none; /* tira o sublinhado */
+  color: inherit;      
+  text-decoration: none; 
 }

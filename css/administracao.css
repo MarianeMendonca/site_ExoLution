@@ -4,7 +4,6 @@ section {
   color: #000;
 }
 
-/* ===== Título ===== */
 div.categorias {
   padding: 80px 30px;
   text-align: center;
@@ -20,7 +19,6 @@ div.categorias h1.titulo {
   font-family: "Delius", cursive;
 }
 
-/* ===== Grid ===== */
 div.grid-categorias {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -31,7 +29,6 @@ div.grid-categorias {
   margin-bottom: 10px;
 }
 
-/* ===== Card ===== */
 div.grid-categorias a.card {
   position: relative;
   height: 100px;
@@ -76,7 +73,6 @@ div.grid-categorias a.card:hover div.overlay {
   background: rgba(0,0,0,0.2);
 }
 
-/* ===== Backgrounds das categorias ===== */
 .usuario { background-image: url('../imagem/perfil.png'); }
 .funcionarios { background-image: url('../imagem/profissional.png'); }
 .fornecedores { background-image: url('../imagem/pessoas.png'); }

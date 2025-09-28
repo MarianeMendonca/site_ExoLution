@@ -51,6 +51,15 @@ div.product-info span {
     color: #444;
 }
 
+a{
+    color: #fff;
+    text-decoration: none;
+}
+a:hover{
+    color: #dcd9d9;
+    text-decoration: none;
+}
+
 button.btn{
     padding: 12px 25px;
     border: none;

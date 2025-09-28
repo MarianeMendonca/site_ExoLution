@@ -169,7 +169,7 @@
           <img src="../imagem/brinquedos.png" alt="Produto 1">
           <h2>Brinquedos para Répteis</h2>
           <p class="preco">R$ 450,00</p>
-          <button class="btn ver-mais">Ver Detalhes</button>
+          <button class="btn ver-mais"><a href="apreProd.php">Ver Detalhes</a></button>
         </div>
 
         <!-- Produto 2 -->

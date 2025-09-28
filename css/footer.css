@@ -19,8 +19,8 @@ div.watermark {
     right: 20px;
     font-size: 26px;
     font-weight: bold;
-    color: rgba(0, 0, 0, 0.5); /* Transparência para efeito de marca d'água */
-    pointer-events: none; /* Para não atrapalhar cliques em outros elementos */
+    color: rgba(0, 0, 0, 0.5);
+    pointer-events: none; 
     z-index: 1;
     font-family: "Roboto Flex", sans-serif;
 }

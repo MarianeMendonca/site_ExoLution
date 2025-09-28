@@ -22,7 +22,7 @@
     ?>
 
     <div class="container">
-    <form action="#" method="post">
+    <form action="../bd/funcoes.php" method="post">
         <h2 class="titulo">Cadastro</h2>
 
         <label for="nome">Nome completo:</label>
@@ -30,19 +30,18 @@
 
         <label for="cpf">CPF:</label>
         <input type="text" id="cpf" name="cpf" 
-               pattern="\d{11}" 
                maxlength="11"
                placeholder="Somente números (11 dígitos)" 
                required>
 
         <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="Somente números" required>
+        <input type="text" id="telefone" name="telefone" placeholder="Somente números" required>
 
         <label for="nascimento">Data de nascimento:</label>
-        <input type="text" id="nascimento" name="nascimento" required>
+        <input type="date" id="nascimento" name="nascimento" required>
 
         <label for="email">E-mail:</label>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email" >
 
         <label for="senha">Senha:</label>
         <div class="senha-container">
@@ -52,7 +51,7 @@
 
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-            <input type="submit" value="Cadastrar" class="btn-cadastrar">
+            <input type="submit" name="cadastrar"value="cadastrar" class="btn-cadastrar">
         </div>
     </form>
     </div>
@@ -69,10 +68,10 @@
             const olho = document.querySelector(".toggle-senha");
             if (senha.type === "password") {
                 senha.type = "text";
-                olho.textContent = "🙈"; // muda ícone quando visível
+                olho.textContent = "🙈"; 
             } else {
                 senha.type = "password";
-                olho.textContent = "👁️"; // volta pro olho normal
+                olho.textContent = "👁️"; 
             }
         }
     </script>

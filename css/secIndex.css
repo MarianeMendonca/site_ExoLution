@@ -45,7 +45,6 @@ section#conteudo div.row div.nichos div.cardA{
 }
 
 section#conteudo div.row div.nichos div.cardA div.texto{
-    /*margin-left: 50px;*/
     flex: 1;
     font-weight:500;
     align-items: center;
@@ -62,7 +61,6 @@ section#conteudo div.row div.nichos div.cardA div.imagem img{
     width: 100%;
     height: auto;
     display: block;
-    /*margin-right: 50px;*/
 }
 
 section#conteudo div.row div.nichos div.parallax{

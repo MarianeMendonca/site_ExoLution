@@ -4,7 +4,6 @@ section {
   color: #000;
 }
 
-/* ===== Título ===== */
 div.categorias {
   padding: 80px 30px;
   text-align: center;
@@ -20,7 +19,6 @@ div.categorias h1.titulo {
   font-family: "Delius", cursive;
 }
 
-/* ===== Grid ===== */
 div.grid-categorias {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -31,7 +29,6 @@ div.grid-categorias {
   margin-bottom: 84px;
 }
 
-/* ===== Card ===== */
 div.grid-categorias a.card {
   position: relative;
   height: 100px;
