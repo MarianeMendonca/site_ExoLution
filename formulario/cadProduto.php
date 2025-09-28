@@ -34,6 +34,9 @@
         <label for="preco">Preço (R$):</label>
         <input type="number" id="preco" name="preco" step="0.01" min="0" required>
 
+        <label for="estoque">Quantidade em estoque:</label>
+        <input type="number" id="estoque" name="estoque" required>
+
         <label for="categoria">Categoria:</label>
         <select id="categoria" name="categoria" required>
         <option value="">-- Selecione --</option>

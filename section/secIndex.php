@@ -19,7 +19,7 @@
                             e macacos astutos, ela carrega o mistério da floresta em cada movimento sinuoso. Domar tais animais 
                             é como trazer para casa o poder oculto da própria selva — perigoso, fascinante e impossível de ignorar.
                         </p>
-                        <button type="button" class="btn btn-outline-success">Success</button>
+                        <button type="button" class="btn btn-outline-success">Ver Produtos</button>
                     </div>
                     <div class="imagem">
                         <img src="imagem/cobra.png" alt="cobra">
@@ -38,7 +38,7 @@
                             Quem ousa domesticar essas criaturas não ganha apenas companhia, mas um pedaço vivo da floresta, um 
                             símbolo mágico que carrega consigo o mistério e a exuberância da selva.
                         </p>
-                        <button type="button" class="btn btn-outline-success">Success</button>
+                        <button type="button" class="btn btn-outline-success">Ver Produtos</button>
                     </div>
                 </div>
                 <div class="parallax bg2"></div>
@@ -51,7 +51,7 @@
                             submerso. Domar tais seres é como prender o próprio mar dentro de casa: selvagem, fascinante e envolto em 
                             um encanto impossível de conter.
                         </p>
-                        <button type="button" class="btn btn-outline-success">Success</button>
+                        <button type="button" class="btn btn-outline-success">Ver Produtos</button>
                     </div>
                     <div class="imagem">
                         <img src="imagem/tartaruga.png" alt="Tartaruga">

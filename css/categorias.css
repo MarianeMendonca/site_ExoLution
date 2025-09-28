@@ -1,10 +1,9 @@
 section {
   margin: 0;
-  background: #c1eaf6;
+  background: #e5fded;
   color: #000;
 }
 
-/* ===== Título ===== */
 div.categorias {
   padding: 80px 20px;
   text-align: center;
@@ -24,7 +23,6 @@ div.categorias p.subtitulo {
   margin-bottom: 30px;
 }
 
-/* ===== Divisor das categorias ===== */
 p.sub {
   font-size: 22px;
   font-weight: 600;
@@ -39,7 +37,6 @@ p.sub {
   padding: 0 15px;
 }
 
-/* Linha decorativa */
 p.sub::before,
 p.sub::after {
   content: "";
@@ -59,7 +56,6 @@ p.sub::after {
   right: -70px;
 }
 
-/* ===== Grid ===== */
 div.grid-categorias {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -69,7 +65,6 @@ div.grid-categorias {
   padding: 0 10px;
 }
 
-/* ===== Card ===== */
 div.grid-categorias a.card {
   position: relative;
   height: 180px;
@@ -113,15 +108,14 @@ div.grid-categorias a.card:hover div.overlay {
   background: rgba(0,0,0,0.2);
 }
 
-/* ===== Backgrounds das categorias ===== */
 .roupa { background-image: url('../imagem/roupas.png'); }
 .brinquedo { background-image: url('../imagem/brinquedos.png'); }
 .racao { background-image: url('../imagem/racao.png'); }
 .higiene { background-image: url('../imagem/higiene.png'); }
-.aquario { background-image: url('../imagem/aquarios.jpg'); }
-.outros { background-image: url('../imagem/outros.jpg'); }
+.aquario { background-image: url('../imagem/aquario.png'); }
+.outros { background-image: url('../imagem/outros.png'); }
 
-.aves { background-image: url('../imagem/aves.jpg'); }
+.aves { background-image: url('../imagem/aves.png'); }
 .repteis { background-image: url('../imagem/repteis.jpg'); }
 .mamiferos { background-image: url('../imagem/mamiferos.jpg'); }
 .peixes { background-image: url('../imagem/peixes.jpg'); }
