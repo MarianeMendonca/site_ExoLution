@@ -26,7 +26,6 @@ header#cabecalho nav.navbar div.container-fluid div.nome img{
     width: 70px;
     height: 70px;
     margin-right: 50px;
-    box-shadow: 0 0 15px rgba(0,0,0,0.1); /* sombra externa suave */
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 header#cabecalho nav.navbar div.container-fluid div.collapse ul.navbar-nav{

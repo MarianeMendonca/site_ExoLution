@@ -42,8 +42,6 @@
                                     echo '<a class="nav-link" href="../paginas/produtos.php">Produtos</a>';
                                 }
                             ?>
-
-                        <!--<a class="nav-link" href="#">Produtos</a>-->
                         </li>
                         <li class="nav-item">
 
@@ -57,8 +55,6 @@
                                     echo '<a class="nav-link" href="../paginas/categorias.php">Categorias</a>';
                                 }
                             ?>
-
-                        <!--<a class="nav-link" href="#">Categorias</a>-->
                         </li>
                         <li class="nav-item">
 
@@ -85,51 +81,32 @@
                                     echo '<a class="nav-link" href="../paginas/perfil.php">Perfil</a>';
                                 }
                             ?>
-
-                        <!--<a class="nav-link" href="#">Perfil</a>-->
                         </li>
                     </ul>
-                    <!--<div id="carrinho">
-                        <img src="imagem/carrinho.png">
-                    </div>
-                    <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Pesquisar" aria-label="Search"/>
-                        <button class="btn btn-outline-success" type="submit">Pesquisar</button>
-                    </form>
-                    <div class="input-group">
-                        <div class="input-icon">
-                            <img src="imagem/pesquisa.png" alt="PesquisaS">
-                        </div>
-                        <input id="search" type="text" class="input-field" placeholder="Pesquisar">
-                    </div>!-->
                     <div class="carrinho-pesquisa">
                         <div id="carrinho">
 
                             <?php
-                                $pag = basename($_SERVER['PHP_SELF']); // retorna só o nome, ex: "cadastro.php"
+                                $pag = basename($_SERVER['PHP_SELF']); 
                                 if($pag === 'index.php'){
                                     echo '<img src="imagem/carrinho.png" alt="Carrinho" />';
                                 } else{
                                     echo '<img src="../imagem/carrinho.png" alt="Carrinho" />';
                                 }
                             ?>
-
-                            <!--<img src="imagem/carrinho.png" alt="Carrinho" />-->
                         </div>
 
                         <div class="input-group">
                         <div class="input-icon">
 
                             <?php
-                                $pag = basename($_SERVER['PHP_SELF']); // retorna só o nome, ex: "cadastro.php"
+                                $pag = basename($_SERVER['PHP_SELF']); 
                                 if($pag === 'index.php'){
                                     echo '<img src="imagem/pesquisa.png" alt="Pesquisas">';
                                 } else{
                                     echo '<img src="../imagem/pesquisa.png" alt="Pesquisas"> ';
                                 }
                             ?>
-
-                            <!--<img src="imagem/pesquisa.png" alt="PesquisaS">-->
                         </div>
                         <input id="search" type="text" class="input-field" placeholder="Pesquisar">
                     </div>
