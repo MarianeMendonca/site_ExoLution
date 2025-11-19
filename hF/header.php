@@ -23,9 +23,9 @@
                             <?php
                                 $pag = basename($_SERVER['PHP_SELF']);
                                 if($pag === 'index.php'){
-                                    echo '<a class="nav-link active" aria-current="page" href="#">Home</a>';
+                                    echo '<a class="nav-link mx-3" aria-current="page" href="#" style="font-weight: 600;">HOME</a>';
                                 }else{
-                                    echo '<a class="nav-link" href="../index.php">Home</a>';
+                                    echo '<a class="nav-link mx-3" href="../index.php">HOME</a>';
                                 }
                             ?>
 
@@ -35,11 +35,11 @@
                             <?php
                                 $pag = basename($_SERVER['PHP_SELF']);
                                 if($pag === 'produtos.php'){
-                                    echo '<a class="nav-link active" aria-current="page" href="#">Produtos</a>';
+                                    echo '<a class="nav-link mx-3" aria-current="page" href="#" style="font-weight: 600;">PRODUTOS</a>';
                                 }else if($pag === 'index.php'){
-                                    echo '<a class="nav-link" href="paginas/produtos.php">Produtos</a>';
+                                    echo '<a class="nav-link mx-3" href="paginas/produtos.php">PRODUTOS</a>';
                                 }else{
-                                    echo '<a class="nav-link" href="../paginas/produtos.php">Produtos</a>';
+                                    echo '<a class="nav-link mx-3" href="../paginas/produtos.php">PRODUTOS</a>';
                                 }
                             ?>
                         </li>
@@ -48,11 +48,11 @@
                             <?php
                                 $pag = basename($_SERVER['PHP_SELF']);
                                 if($pag === 'categorias.php'){
-                                    echo '<a class="nav-link active" aria-current="page" href="#">Categorias</a>';
+                                    echo '<a class="nav-link mx-3" aria-current="page" href="#" style="font-weight: 600;">CATEGORIAS</a>';
                                 }else if($pag === 'index.php'){
-                                    echo '<a class="nav-link" href="paginas/categorias.php">Categorias</a>';
+                                    echo '<a class="nav-link mx-3" href="paginas/categorias.php">CATEGORIAS</a>';
                                 }else{
-                                    echo '<a class="nav-link" href="../paginas/categorias.php">Categorias</a>';
+                                    echo '<a class="nav-link mx-3" href="../paginas/categorias.php">CATEGORIAS</a>';
                                 }
                             ?>
                         </li>
@@ -61,11 +61,11 @@
                             <?php
                                 $pag = basename($_SERVER['PHP_SELF']);
                                 if($pag === 'contatos.php'){
-                                    echo '<a class="nav-link active" aria-current="page" href="#">Contatos</a>';
+                                    echo '<a class="nav-link mx-3" aria-current="page" href="#" style="font-weight: 600;">CONTATOS</a>';
                                 }else if($pag === 'index.php'){
-                                    echo '<a class="nav-link" href="paginas/contatos.php">Contatos</a>';
+                                    echo '<a class="nav-link mx-3" href="paginas/contatos.php">CONTATOS</a>';
                                 }else{
-                                    echo '<a class="nav-link" href="../paginas/contatos.php">Contatos</a>';
+                                    echo '<a class="nav-link mx-3" href="../paginas/contatos.php">CONTATOS</a>';
                                 }
                             ?>
 
@@ -74,11 +74,11 @@
                             <?php
                                 $pag = basename($_SERVER['PHP_SELF']);
                                 if($pag === 'perfil.php'){
-                                    echo '<a class="nav-link active" aria-current="page" href="#">Perfil</a>';
+                                    echo '<a class="nav-link mx-3" aria-current="page" href="#" style="font-weight: 600;">PERFIL</a>';
                                 }else if($pag === 'index.php'){
-                                    echo '<a class="nav-link" href="paginas/perfil.php">Perfil</a>';
+                                    echo '<a class="nav-link mx-3" href="paginas/perfil.php">PERFIL</a>';
                                 }else{
-                                    echo '<a class="nav-link" href="../paginas/perfil.php">Perfil</a>';
+                                    echo '<a class="nav-link mx-3" href="../paginas/perfil.php">PERFIL</a>';
                                 }
                             ?>
                         </li>

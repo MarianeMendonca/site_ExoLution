@@ -106,3 +106,6 @@ div.redes div.icones div.app img{
     width: 25px;
     height: 25px;
 }
+p{
+    text-align: justify;
+}
