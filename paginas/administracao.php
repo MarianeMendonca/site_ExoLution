@@ -22,7 +22,7 @@
         }
     ?>
     <?php 
-        if (file_exists('../hF/footer.php')){
+        if (file_exists('../hF/footer2.php')){
             include '../hF/footer2.php'; 
         }
     ?>
