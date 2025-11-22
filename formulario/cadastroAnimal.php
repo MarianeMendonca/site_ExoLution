@@ -22,21 +22,24 @@
     ?>
 
     <div class="container">
-    <form action="#" method="post">
+    <form action="../bd/funcoes.php" method="post">
         <h2 class="titulo">Cadastro de Animal</h2>
 
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
 
         <label for="nascimento">Data de nascimento:</label>
-        <input type="text" id="nascimento" name="nascimento" required>
+        <input type="date" id="nascimento" name="nascimento" required>
 
         <label for="idade">Idade:</label>
         <input type="number" id="idade" name="idade" required>
 
+        <label for="especie">Espécie</label>
+        <input type="text" id="especie" name="especie" required>
+
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-            <input type="submit" value="Cadastrar" class="btn-cadastrar">
+            <input type="submit" name="cadAnimal" value="Cadastrar Animal" class="btn-cadastrar">
         </div>
     </form>
     </div>

@@ -43,6 +43,7 @@
         if ($stmt){
             mysqli_stmt_bind_param($stmt, "ssssssss", $cep, $rua, $numero, $complemento, $bairro, $cidade, $estado, $pais);
             if(mysqli_stmt_execute($stmt)){
+                $_SESSION['mensagem'] = "Endereço criado com sucesso!";
             }else{
                 $_SESSION['mensagem'] = "Erro ao criar o usuário";
             }
@@ -67,11 +68,35 @@
         if ($stmt){
             mysqli_stmt_bind_param($stmt, "sssss", $nome, $descricao, $preco, $estoque, $categoria);
             if(mysqli_stmt_execute($stmt)){
+                $_SESSION['mensagem'] = "Produto criado com sucesso!";
             }else{
                 $_SESSION['mensagem'] = "Erro ao criar o usuário";
             }
         }else{
             $_SESSION['mensagem'] = "Erro na formatação da query!";
         }
+    }
+
+    if(isset($_POST['cadAnimal'])){
+        $nome = trim($_POST['nome']);
+        $nascimento =trim($_POST['nascimento']);
+        $idade= $_POST['idade'];
+        $especie = trim($_POST['especie']);
+
+        $sql = "INSERT INTO animal (nome, nascimento, idade, especie) VALUES (?, ?, ?, ?)";
+        $stmt = mysqli_prepare($conexao, $sql);
+
+        if ($stmt){
+            mysqli_stmt_bind_param($stmt, "ssis", $nome, $nascimento, $idade, $especie);
+            if(mysqli_stmt_execute($stmt)){
+                $_SESSION['mensagem'] = "Animal criado com sucesso!";
+            }else{
+                $_SESSION['mensagem'] = "Erro ao criar o usuário";
+            }
+        }else{
+            $_SESSION['mensagem'] = "Erro na formatação da query!";
+        }
+
+        echo $_SESSION['mensagem'];
     }
 ?>
