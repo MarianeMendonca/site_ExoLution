@@ -8,7 +8,7 @@
     <link rel="stylesheet" type="text/css" href="../bootstrap/bootstrap.min.css" >
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
     <link rel="stylesheet" type="text/css" href="../css/footer2.css" >
-    <link rel="stylesheet" type="text/css" href="../css/secProduto.css" >
+    <link rel="stylesheet" type="text/css" href="../css/secProduto2.css" >
     
 </head>
 <body>
@@ -19,7 +19,7 @@
     ?>
     <?php 
         if (file_exists('../section/secProduto.php')){
-            include '../section/secProduto.php'; 
+            include '../section/secProduto2.php'; 
         }
     ?>
     <?php 

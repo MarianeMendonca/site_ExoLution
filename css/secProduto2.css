@@ -1,0 +1,49 @@
+section {
+    margin: 0;
+    font-family: "Roboto Flex", sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+video#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(6px) brightness(0.6);
+}
+
+div.container {
+    margin-top: 105px;
+    max-width: 1300px;
+    width: 95%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+div.header h1 {
+    font-family: "Delius", cursive;
+    font-size: 32px;
+    color: #34d399;
+    margin-bottom: 10px;
+}
+
+div.header p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+p{
+    text-align: justify;
+}

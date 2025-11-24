@@ -1,3 +1,6 @@
+<head>
+<link rel="stylesheet" type="text/css" href="../css/categorias.css">
+</head>
 <section>
     <div class="categorias">
         <h1 class="titulo">Explore Nossas Categorias</h1>

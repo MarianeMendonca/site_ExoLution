@@ -22,7 +22,7 @@ video#background-video {
 
 div.container {
     margin-top: 105px;
-    max-width: 900px;
+    max-width: 1300px;
     width: 95%;
     background: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(20px);

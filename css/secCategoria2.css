@@ -1,0 +1,107 @@
+section {
+    margin: 0;
+    font-family: "Roboto Flex", sans-serif;
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+video#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(6px) brightness(0.6);
+}
+
+div.container {
+    margin-top: 105px;
+    max-width: 1300px;
+    width: 95%;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(20px);
+    border-radius: 20px;
+    padding: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+
+div.header h1 {
+    font-family: "Delius", cursive;
+    font-size: 32px;
+    color: #34d399;
+    margin-bottom: 10px;
+}
+
+div.header p {
+    font-size: 18px;
+    color: #ccc;
+}
+
+p{
+    text-align: justify;
+}
+
+div.cardGeral{
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+div.card{
+    position: relative;     
+    overflow: hidden;
+    background: rgba(6, 78, 59, 0.4);
+    border-radius: 15px;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    display: flex;          
+    flex-direction: column; 
+    flex: 1;
+    min-width: 300px;
+    max-width: 400px;
+    height: 250px;
+}
+h2.sub {
+    margin-top: 40px;
+    margin-bottom: 20px;
+    font-family: "Delius", cursive;
+    font-size: 26px;
+    color: #a7f3d0;
+    background: rgba(255, 255, 255, 0.08);
+    padding: 10px 20px;
+    border-left: 4px solid #34d399;
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    width: fit-content;
+    margin-bottom: 20px;
+}
+div.cardGeral div.card img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    top: 0;
+    left: 0;
+    border: 1px solid rgba(52, 211, 153, 0.3);
+    border-radius: 10px;
+}
+div.inf{
+    position: absolute;
+    bottom: 0;               
+    left: 0;
+    width: 100%;
+    background: rgba(167, 180, 178, 0.5); 
+    padding: 10px;
+    text-align: center;
+    backdrop-filter: blur(4px);
+}
+h2 {
+    color: #70e8b8;
+    font-size: 22px;
+    margin-bottom: 15px;
+}
