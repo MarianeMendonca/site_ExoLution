@@ -45,7 +45,7 @@
             if(mysqli_stmt_execute($stmt)){
                 $_SESSION['mensagem'] = "Endereço criado com sucesso!";
             }else{
-                $_SESSION['mensagem'] = "Erro ao criar o usuário";
+                $_SESSION['mensagem'] = "Erro ao criar o endereço";
             }
         }else{
             $_SESSION['mensagem'] = "Erro na formatação da query!";
@@ -70,7 +70,7 @@
             if(mysqli_stmt_execute($stmt)){
                 $_SESSION['mensagem'] = "Produto criado com sucesso!";
             }else{
-                $_SESSION['mensagem'] = "Erro ao criar o usuário";
+                $_SESSION['mensagem'] = "Erro ao criar o produto";
             }
         }else{
             $_SESSION['mensagem'] = "Erro na formatação da query!";
@@ -91,7 +91,33 @@
             if(mysqli_stmt_execute($stmt)){
                 $_SESSION['mensagem'] = "Animal criado com sucesso!";
             }else{
-                $_SESSION['mensagem'] = "Erro ao criar o usuário";
+                $_SESSION['mensagem'] = "Erro ao criar o animal";
+            }
+        }else{
+            $_SESSION['mensagem'] = "Erro na formatação da query!";
+        }
+
+        echo $_SESSION['mensagem'];
+    }
+
+    if(isset($_POST['cadFuncionario'])){
+        $cpf = trim($_POST['cpf']);
+        $nome = trim($_POST['nome']);
+        $telefone = trim($_POST['telefone']);
+        $nascimento = trim($_POST['nascimento']);
+        $email = trim($_POST['email']);
+        $cargo = trim($_POST['cargo']);
+        $senha = password_hash(trim($_POST['senha']), PASSWORD_DEFAULT);
+
+        $sql = "INSERT INTO funcionario (cpf, nome, telefone, nascimento, email, cargo, senha) VALUES (?, ?, ?, ?, ?, ?, ?)";
+        $stmt = mysqli_prepare($conexao, $sql);
+        
+        if ($stmt){
+            mysqli_stmt_bind_param($stmt, "sssssss", $cpf, $nome, $telefone, $nascimento, $email, $cargo, $senha);
+            if(mysqli_stmt_execute($stmt)){
+                $_SESSION['mensagem'] = "Funcionário criado com sucesso!";
+            }else{
+                $_SESSION['mensagem'] = "Erro ao criar o Funcionário";
             }
         }else{
             $_SESSION['mensagem'] = "Erro na formatação da query!";
