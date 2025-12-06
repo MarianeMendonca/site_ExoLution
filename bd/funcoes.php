@@ -125,4 +125,39 @@
 
         echo $_SESSION['mensagem'];
     }
+
+    if (isset($_POST['update_usuario'])){
+       $usuario_id = mysqli_real_escape_string($conexao, trim($_POST['id']));
+       $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+       $telefone = mysqli_real_escape_string($conexao, trim($_POST['telefone']));
+       $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+       $datanascto = mysqli_real_escape_string($conexao, trim($_POST['datanascto']));
+       $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
+
+       $sql = "UPDATE usuario SET nome = ?, telefone = ?, email = ?, datanascto = ?, senha = ? WHERE id = ?"
+       $stmt = mysqli_prepare($conexao, $sql);
+
+       if ($stmt){
+            mysqli_stmt_bind_param($stmt, "sssssi", $nome, $telefone, $email, $datanascto, $senha, $usuario_id);
+            mysqli_stmt_execute($stmt);
+
+            if (mysqli_affected_rows($conexao)>0){
+                $alteracao = true;
+                return $alteracao;
+            }else{
+                $alteracao = false;
+                return $alteracao;                
+            }
+        }
+
+       if ($alteracao){
+            $_SESSION['mensagem'] = "Usuário atualizado com sucesso.";
+            header('Location: usuario_view.php');
+            exit;
+       }else{
+            $_SESSION['mensagem'] = "Usuário não foi atualizado.";
+            header('Location: usuario_view.php');
+            exit;
+       }
+     }
 ?>

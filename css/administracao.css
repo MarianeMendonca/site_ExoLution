@@ -1,81 +1,139 @@
-section {
-  margin: 0;
-  background: rgba(245, 245, 220, 0.875);
-  color: #000;
+/* Variáveis e reset mínimo */
+:root{
+  --accent:#12c9a7;
+  --accent-2:#00b894;
+  --muted:#f5f5dc;
+  --card-bg: rgba(255,255,255,0.96);
+  --glass: rgba(255,255,255,0.06);
+  --shadow: 0 12px 30px rgba(3,6,6,0.12);
+}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+
+/* Section */
+.admin-section{background: linear-gradient(180deg, rgba(245,245,220,0.98) 0%, rgba(240,240,232,0.98) 100%); color:#071; padding:36px 16px}
+
+/* Container */
+.categorias{max-width:1200px;margin:0 auto;padding:42px 18px;border-radius:12px}
+
+/* Title */
+.titulo{font-family:"Delius",cursive;color:var(--accent);font-size:34px;margin:6px 0 22px 0}
+
+/* Grid */
+.grid-categorias{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap:22px;
+  align-items:stretch;
 }
 
-div.categorias {
-  padding: 80px 30px;
-  text-align: center;
-  margin-bottom: -30px;
-}
-
-div.categorias h1.titulo {
-    margin-top: 50px;
-  font-size: 36px;
-  font-weight: 700;
-  margin-bottom: 50px;
-  color: #0f8c2c;
-  font-family: "Delius", cursive;
-}
-
-div.grid-categorias {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 28px;
-  max-width: 1100px;
-  margin: 0 auto;
-  padding: 0 10px;
-  margin-bottom: 10px;
-}
-
-div.grid-categorias a.card {
-  position: relative;
-  height: 100px;
-  width: 80%;
-  border-radius: 0px 18px;
-  overflow: hidden;
-  text-decoration: none;
-  color: white;
-  font-weight: 700;
-  display: flex;
-  align-items: flex-end;
-  justify-content:right;
-  padding: 20px;
-  box-shadow: 0 6px 18px rgba(0,0,0,0.15);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-size: cover;
-  background-position: center;
-}
-
-div.grid-categorias a.card h2 {
+/* Card base */
+.admin-card{
   position:relative;
-  z-index: 2;
-  font-size: 20px;
-  text-shadow: 0 2px 8px rgba(0,0,0,0.4);
+  display:block;
+  border-radius:14px;
+  overflow:visible;
+  text-decoration:none;
+  color:inherit;
+  transition:transform .32s cubic-bezier(.2,.9,.3,1), box-shadow .32s ease;
+  cursor:pointer;
+  outline: none;
 }
 
-div.grid-categorias a.card div.overlay {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.35);
-  z-index: 1;
-  transition: background 0.3s ease;
+/* Animated border accent */
+.admin-card .card-border{
+  position:absolute;
+  inset: -2px;
+  border-radius:16px;
+  background: linear-gradient(90deg, rgba(18,201,167,0.25), rgba(0,184,148,0.12));
+  filter: blur(8px);
+  opacity:0;
+  transform: scale(0.98);
+  transition: opacity .28s ease, transform .28s ease;
+  pointer-events:none;
 }
 
-div.grid-categorias a.card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 22px rgba(0,0,0,0.25);
+/* Inner "glass" content area */
+.admin-card .card-inner{
+  position:relative;
+  background: var(--card-bg);
+  border-radius:12px;
+  padding:16px 16px 14px 16px;
+  min-height:140px;
+  display:flex;
+  flex-direction:column;
+  justify-content:space-between;
+  box-shadow: var(--shadow);
+  backdrop-filter: blur(6px);
 }
 
-div.grid-categorias a.card:hover div.overlay {
-  background: rgba(0,0,0,0.2);
+/* meta: icon + titles */
+.card-meta{display:flex;gap:12px;align-items:center}
+.card-meta .icon{
+  width:48px;
+  height:48px;
+  border-radius:10px;
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  background: linear-gradient(180deg, rgba(18,201,167,0.12), rgba(0,184,148,0.06));
+  color:var(--accent-2);
+  flex-shrink:0;
 }
+.card-meta svg{display:block;}
 
-.usuario { background-image: url('../imagem/perfil.png'); }
-.funcionarios { background-image: url('../imagem/profissional.png'); }
-.fornecedores { background-image: url('../imagem/pessoas.png'); }
-.encomendas { background-image: url('../imagem/pacotes.png'); }
-.produtos { background-image: url('../imagem/outros.png'); }
-.outros { background-image: url('../imagem/compras.png'); }
+/* titles */
+.titles h2{margin:0;font-size:1.05rem;color:#073; font-weight:700}
+.titles .sub{margin:2px 0 0 0;font-size:.88rem;color:#6b6b6b}
+
+/* badges / stats */
+.card-stats{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.badge{
+  display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:.85rem;background:#f3f4f6;color:#071;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+}
+.badge.primary{background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#01110e}
+.badge.warning{background:#fff4e5;color:#7a4b00}
+.badge.danger{background:#ffe9e9;color:#a12b2b}
+.badge.success{background:#e6fff5;color:#0a6b4d}
+.badge.info{background:#eef7ff;color:#0a4e78}
+
+/* action buttons (hidden by default, revealed on hover/focus) */
+.card-actions{
+  display:flex;
+  gap:8px;
+  justify-content:flex-end;
+  opacity:0;
+  transform: translateY(6px);
+  transition: opacity .24s ease, transform .24s ease;
+}
+.action{
+  width:38px;height:38px;border-radius:8px;border:none;background:rgba(1,17,14,0.04);display:inline-flex;align-items:center;justify-content:center;color:#071;cursor:pointer;
+  transition: background .18s ease, transform .12s ease;
+}
+.action:hover{transform:translateY(-3px);background:rgba(1,17,14,0.06)}
+
+/* reveal effects */
+.admin-card:hover .card-border,
+.admin-card:focus-within .card-border{opacity:1;transform:scale(1)}
+.admin-card:hover .card-actions,
+.admin-card:focus-within .card-actions{opacity:1;transform:translateY(0)}
+
+/* subtle background image per type (optional) */
+.usuario .card-inner{background-image: linear-gradient(45deg, rgba(18,201,167,0.02), rgba(0,184,148,0.01))}
+.funcionarios .card-inner{background-image: linear-gradient(45deg, rgba(43,111,135,0.02), rgba(43,111,135,0.01))}
+.fornecedores .card-inner{background-image: linear-gradient(45deg, rgba(106,90,154,0.02), rgba(106,90,154,0.01))}
+.encomendas .card-inner{background-image: linear-gradient(45deg, rgba(189,107,43,0.02), rgba(189,107,43,0.01))}
+.produtos .card-inner{background-image: linear-gradient(45deg, rgba(31,122,107,0.02), rgba(31,122,107,0.01))}
+.outros .card-inner{background-image: linear-gradient(45deg, rgba(166,77,106,0.02), rgba(166,77,106,0.01))}
+
+/* focus visible */
+.admin-card:focus-visible{outline:3px solid rgba(18,201,167,0.12);outline-offset:6px}
+
+/* mobile adjustments */
+@media (max-width:720px){
+  .card-inner{padding:12px}
+  .card-meta .icon{width:44px;height:44px}
+  .titulo{font-size:28px}
+  .badge{font-size:.82rem;padding:5px 8px}
+}
