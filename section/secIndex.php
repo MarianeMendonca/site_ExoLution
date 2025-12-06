@@ -10,6 +10,21 @@
             <p class="textT">O futuro do cuidado animal é exótico</p>
 
             <div class="selva">
+                <div class="cardA">
+                    <div class="imagem">
+                        <img src="imagem/papagaio.png" alt="Papagaio">
+                    </div>
+                    <div class="texto">
+                        <p class="titulo">Céus Selvagens</p>
+                        <p class="conteudo">Nas selvas fechadas, ecoam os gritos e cantos de aves que parecem saídas de lendas. Papagaios de cores 
+                            incendiadas, araras que brilham como pedras preciosas e tucanos de bico monumental reinam sobre as copas. 
+                            Quem ousa domesticar essas criaturas não ganha apenas companhia, mas um pedaço vivo da floresta, um 
+                            símbolo mágico que carrega consigo o mistério e a exuberância da selva.
+                        </p>
+                        <button type="button" class="btn btn-outline-success">Ver Produtos</button>
+                    </div>
+                </div>
+                <div class="parallax bg2"></div>
 
                 <div class="cardA">
                     <div class="texto">
@@ -29,21 +44,8 @@
 
                 <div class="cardA">
                     <div class="imagem">
-                        <img src="imagem/papagaio.png" alt="Papagaio">
+                        <img src="imagem/tartaruga.png" alt="Tartaruga">
                     </div>
-                    <div class="texto">
-                        <p class="titulo">Céus Selvagens</p>
-                        <p class="conteudo">Nas selvas fechadas, ecoam os gritos e cantos de aves que parecem saídas de lendas. Papagaios de cores 
-                            incendiadas, araras que brilham como pedras preciosas e tucanos de bico monumental reinam sobre as copas. 
-                            Quem ousa domesticar essas criaturas não ganha apenas companhia, mas um pedaço vivo da floresta, um 
-                            símbolo mágico que carrega consigo o mistério e a exuberância da selva.
-                        </p>
-                        <button type="button" class="btn btn-outline-success">Ver Produtos</button>
-                    </div>
-                </div>
-                <div class="parallax bg2"></div>
-
-                <div class="cardA">
                     <div class="texto">
                         <p class="titulo">Reinos Submersos</p>
                         <p class="conteudo">Nas profundezas azuis do oceano, onde a luz se dissolve em mistério, deslizam criaturas que o homem ousou 
@@ -52,9 +54,6 @@
                             um encanto impossível de conter.
                         </p>
                         <button type="button" class="btn btn-outline-success">Ver Produtos</button>
-                    </div>
-                    <div class="imagem">
-                        <img src="imagem/tartaruga.png" alt="Tartaruga">
                     </div>
                 </div>
                 <div class="parallax bg3"></div>
