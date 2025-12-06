@@ -92,14 +92,14 @@
           <div class="card-stats"></div>
 
           <div class="card-actions" aria-hidden="true">
-            <a class="action view" href="tabela_fornecedores.php" title="Ver" aria-label="Ver Fornecedores" role="button">
+            <a class="action view" href="../tabelas/tabFornecedor.php" title="Ver" aria-label="Ver Fornecedores" role="button">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M12 5c7 0 11 7 11 7s-4 7-11 7S1 12 1 12s4-7 11-7z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>
               </svg>
             </a>
 
-            <a class="action add" href="add_fornecedor.php" title="Adicionar" aria-label="Adicionar Fornecedores" role="button">
+            <a class="action add" href="../formulario/cadfornecedor.php" title="Adicionar" aria-label="Adicionar Fornecedores" role="button">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M12 5v14M5 12h14" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
               </svg>

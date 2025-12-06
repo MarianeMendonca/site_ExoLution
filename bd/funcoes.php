@@ -179,6 +179,20 @@
         return $usuario;  
     }
 
+    if(isset($_POST['usuario_delete'])){
+        $usuario_id = mysqli_real_escape_string($conexao, trim($_POST['usuario_delete']));
+
+        $sql = "DELETE FROM usuario WHERE cpf='$usuario_id'";
+        mysqli_query($conexao, $sql);
+
+        if (mysqli_affected_rows($conexao) > 0 ){
+            header('Location: ../tabelas/tabUsuario.php');
+            return true;
+        }else{
+            return false;
+        }
+    }
+
     function obterTodosFuncionarios($conexao){
         $sql = "SELECT * from funcionario ORDER BY nome ASC";
         $resultado = mysqli_query($conexao, $sql);
@@ -228,6 +242,108 @@
                 $alteracao = false;
                 return $alteracao;                
             }
+        }
+    }
+
+    if(isset($_POST['funcionario_delete'])){
+        $funcionario_id = mysqli_real_escape_string($conexao, trim($_POST['funcionario_delete']));
+
+        $sql = "DELETE FROM funcionario WHERE cpf='$funcionario_id'";
+        mysqli_query($conexao, $sql);
+
+        if (mysqli_affected_rows($conexao) > 0 ){
+            header('Location: ../tabelas/tabFuncionario.php');
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    if(isset($_POST['cad_fornecedor'])){
+        $nome = trim($_POST['nome']);
+        $telefone= trim($_POST['telefone']);
+        $email = trim($_POST['email']);
+        $obs = trim($_POST['obs']);
+
+        $sql = "INSERT INTO fornecedor (nome, telefone, email, obs) VALUES (?, ?, ?, ?)";
+        $stmt = mysqli_prepare($conexao, $sql);
+
+        if ($stmt){
+            mysqli_stmt_bind_param($stmt, "ssss", $nome, $telefone, $email, $obs);
+            if(mysqli_stmt_execute($stmt)){
+                header('Location: ../tabelas/tabFornecedor.php');
+                $_SESSION['mensagem'] = "Usuário criado com sucesso!";
+            }else{
+                $_SESSION['mensagem'] = "Erro ao criar o usuário";
+            }
+        }else{
+            $_SESSION['mensagem'] = "Erro na formatação da query!";
+        }
+
+        echo $_SESSION['mensagem'];
+    }
+
+    function obterTodosFornecedores($conexao){
+        $sql = "SELECT * from fornecedor ORDER BY nome ASC";
+        $resultado = mysqli_query($conexao, $sql);
+
+        $fornecedor = [];
+        if ($resultado && mysqli_num_rows($resultado) >0){
+            while ($row = mysqli_fetch_assoc($resultado)){
+                $fornecedor[]=$row;
+            } 
+        }
+
+        return $fornecedor;
+    }
+    
+    function buscarFornecedorId($conexao, $id){
+        $sql = "SELECT * from fornecedor WHERE id = '$id'";
+        $resultado = mysqli_query($conexao, $sql);
+
+        if (mysqli_num_rows($resultado)>0){
+            $fornecedor = mysqli_fetch_array($resultado);
+        }
+
+        return $fornecedor;  
+    }
+
+    if (isset($_POST['update_fornecedor'])){
+       $fornecedor_id = mysqli_real_escape_string($conexao, trim($_POST['id']));
+       $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+       $telefone = mysqli_real_escape_string($conexao, trim($_POST['telefone']));
+       $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+       $obs = mysqli_real_escape_string($conexao, trim($_POST['obs']));
+
+       $sql = "UPDATE fornecedor SET nome = ?, telefone = ?, email = ?, obs = ? WHERE id = ?";
+       $stmt = mysqli_prepare($conexao, $sql);
+
+       if ($stmt){
+            mysqli_stmt_bind_param($stmt, "ssssi", $nome, $telefone, $email, $obs, $fornecedor_id);
+            mysqli_stmt_execute($stmt);
+
+            if (mysqli_affected_rows($conexao)>0){
+                $alteracao = true;
+                header('Location: ../tabelas/tabFornecedor.php');
+                return $alteracao;
+            }else{
+                $alteracao = false;
+                return $alteracao;                
+            }
+        }
+    }
+
+    if(isset($_POST['fornecedor_delete'])){
+        $fornecedor_id = mysqli_real_escape_string($conexao, trim($_POST['fornecedor_delete']));
+
+        $sql = "DELETE FROM fornecedor WHERE id='$fornecedor_id'";
+        mysqli_query($conexao, $sql);
+
+        if (mysqli_affected_rows($conexao) > 0 ){
+            header('Location: ../tabelas/tabFornecedor.php');
+            return true;
+        }else{
+            return false;
         }
     }
 ?>

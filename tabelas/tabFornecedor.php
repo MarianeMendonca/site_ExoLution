@@ -2,9 +2,8 @@
     require_once '../bd/conexao.php';
     require_once '../bd/funcoes.php';
 
-    $usuarios = obterTodosUsuarios($conexao);
+    $fornecedores = obterTodosFornecedores($conexao);
 ?>
-
 <!DOCTYPE html>
 <html lang="pt-br, en">
 <head>
@@ -16,40 +15,38 @@
     <link rel="stylesheet" type="text/css" href="../css/menu.css" >
     <link rel="stylesheet" type="text/css" href="../css/tabela.css" >
 </head>
-<body>
     <?php 
         if (file_exists('../hF/header.php')){
             include '../hF/header.php'; 
         }
     ?>
-
     
-<section>
+    <section>
 <video id="background-video" autoplay loop muted>
     <source src="../video/mar.mp4" type="video/mp4">
 </video>
   <div class="main">
-    <h2>Gerenciamento de Usuários</h2>
-    <?php if(count($usuarios) > 0){ ?>
+    <h2>Gerenciamento de Fornecedores</h2>
+    <?php if(count($fornecedores) > 0){ ?>
     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
                                 <th>Nome</th>
-                                <th>Email</th>
+                                <th>Telefone</th>
                                 <th>Ações</th>
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($usuarios as $usuario){ ?>
+                            <?php foreach ($fornecedores as $fornecedor){ ?>
                                 <tr>
-                                    <td><?php echo $usuario['nome'] ?></td>
-                                    <td><?php echo $usuario['email'] ?></td>
+                                    <td><?php echo $fornecedor['nome'] ?></td>
+                                    <td><?php echo $fornecedor['telefone'] ?></td>
                                     <td>
-                                        <a href="../formulario/edicaoUsuario.php?cpf=<?= $usuario['cpf'] ?>" class="btn btn-warning btn-sm"> Editar</a>
+                                        <a href="../formulario/edicaoFornecedor.php?id=<?= $fornecedor['id'] ?>" class="btn btn-warning btn-sm"> Editar</a>
                                        
                                         <form action="../bd/funcoes.php" method="POST" class=d-inline>
-                                            <button type="submit" onclick ="return confirm('Tem certeza que deseja excluir o usuario?');"
-                                             name= "usuario_delete" value="<?= $usuario['cpf'] ?>" class="btn btn-danger btn-sm"> Excluir
+                                            <button type="submit" onclick ="return confirm('Tem certeza que deseja excluir o funcionario?');"
+                                             name= "fornecedor_delete" value="<?= $fornecedor['id'] ?>" class="btn btn-danger btn-sm"> Excluir
                                             </button>
 
                                         </form>
@@ -61,7 +58,7 @@
                         </tbody>
                   </table>
     <?php } else{ ?>
-        <h5> Não existem usuários cadastrados</h3>     
+        <h5> Não existem fornecedores cadastrados</h3>     
     <?php } ?>
 </div>
 </section>
