@@ -16,6 +16,7 @@
         if ($stmt){
             mysqli_stmt_bind_param($stmt, "ssssss", $cpf, $nome, $telefone, $email, $datanascto, $senha);
             if(mysqli_stmt_execute($stmt)){
+                header('Location: ../tabelas/tabUsuario.php');
                 $_SESSION['mensagem'] = "Usuário criado com sucesso!";
             }else{
                 $_SESSION['mensagem'] = "Erro ao criar o usuário";
@@ -115,6 +116,7 @@
         if ($stmt){
             mysqli_stmt_bind_param($stmt, "sssssss", $cpf, $nome, $telefone, $nascimento, $email, $cargo, $senha);
             if(mysqli_stmt_execute($stmt)){
+                header('Location: ../tabelas/tabFuncionario.php');
                 $_SESSION['mensagem'] = "Funcionário criado com sucesso!";
             }else{
                 $_SESSION['mensagem'] = "Erro ao criar o Funcionário";
@@ -142,6 +144,7 @@
             mysqli_stmt_execute($stmt);
 
             if (mysqli_affected_rows($conexao)>0){
+                header('Location: ../tabelas/tabUsuario.php');
                 $alteracao = true;
                 return $alteracao;
             }else{
@@ -149,16 +152,6 @@
                 return $alteracao;                
             }
         }
-
-       if ($alteracao){
-            $_SESSION['mensagem'] = "Usuário atualizado com sucesso.";
-            header('Location: usuario_view.php');
-            exit;
-       }else{
-            $_SESSION['mensagem'] = "Usuário não foi atualizado.";
-            header('Location: usuario_view.php');
-            exit;
-       }
     }
 
     function obterTodosUsuarios($conexao){
@@ -174,6 +167,7 @@
 
         return $usuarios;
     }
+
     function buscarUsuarioCpf($conexao, $cpf){
         $sql = "SELECT * from usuario WHERE cpf = '$cpf'";
         $resultado = mysqli_query($conexao, $sql);
@@ -183,5 +177,57 @@
         }
 
         return $usuario;  
+    }
+
+    function obterTodosFuncionarios($conexao){
+        $sql = "SELECT * from funcionario ORDER BY nome ASC";
+        $resultado = mysqli_query($conexao, $sql);
+
+        $usuarios = [];
+        if ($resultado && mysqli_num_rows($resultado) >0){
+            while ($row = mysqli_fetch_assoc($resultado)){
+                $usuarios[]=$row;
+            } 
+        }
+
+        return $usuarios;
+    }
+
+    function buscarFuncionarioCpf($conexao, $cpf){
+        $sql = "SELECT * from funcionario WHERE cpf = '$cpf'";
+        $resultado = mysqli_query($conexao, $sql);
+
+        if (mysqli_num_rows($resultado)>0){
+            $funcionario = mysqli_fetch_array($resultado);
+        }
+
+        return $funcionario;  
+    }
+
+    if (isset($_POST['update_funcionario'])){
+       $funcionario_id = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
+       $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+       $telefone = mysqli_real_escape_string($conexao, trim($_POST['telefone']));
+       $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
+       $datanascto = mysqli_real_escape_string($conexao, trim($_POST['nascimento']));
+       $cargo = mysqli_real_escape_string($conexao, trim($_POST['cargo']));
+       $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
+
+       $sql = "UPDATE funcionario SET nome = ?, telefone = ?, email = ?, nascimento = ?, cargo = ?, senha = ? WHERE cpf = ?";
+       $stmt = mysqli_prepare($conexao, $sql);
+
+       if ($stmt){
+            mysqli_stmt_bind_param($stmt, "ssssssi", $nome, $telefone, $email, $datanascto, $cargo, $senha, $funcionario_id);
+            mysqli_stmt_execute($stmt);
+
+            if (mysqli_affected_rows($conexao)>0){
+                $alteracao = true;
+                header('Location: ../tabelas/tabFuncionario.php');
+                return $alteracao;
+            }else{
+                $alteracao = false;
+                return $alteracao;                
+            }
+        }
     }
 ?>
