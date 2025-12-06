@@ -22,7 +22,7 @@
           <div class="card-stats"></div>
 
           <div class="card-actions" aria-hidden="true">
-            <a class="action view" href="tabela_usuarios.php" title="Ver" aria-label="Ver Usuários" role="button">
+            <a class="action view" href="../tabelas/tabUsuario.php" title="Ver" aria-label="Ver Usuários" role="button">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none">
                 <path d="M12 5c7 0 11 7 11 7s-4 7-11 7S1 12 1 12s4-7 11-7z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
                 <circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/>

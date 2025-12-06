@@ -1,3 +1,13 @@
+<?php
+    require_once '../bd/conexao.php';
+    require_once '../bd/funcoes.php';
+
+    if (isset($_GET['cpf'])){
+        $usuario_id = mysqli_real_escape_string($conexao, $_GET['cpf']);
+
+        $usuario =  buscarUsuarioCpf($conexao, $usuario_id);
+    }
+?>
 <!DOCTYPE html>
 <html lang="pt-br, en">
 <head>
@@ -22,38 +32,31 @@
     ?>
 
     <div class="container">
-        <?php
-            if (isset($_GET['id'])){
-                $usuario_id = mysqli_real_escape_string($conexao, $_GET['id']);
-
-                $usuario =  buscarUsuarioId($conexao, $usuario_id);
-            }
-
-        ?>
     <form action="../bd/funcoes.php" method="post">
         <h2 class="titulo">Edição de Informações</h2>
+        <input type="hidden" name="cpf" value="<?= $usuario['cpf']; ?>">
 
         <label for="nome">Nome completo:</label>
-        <input type="text" id="nome" name="nome" required>
+        <input type="text" id="nome" name="nome" value="<?= $usuario['nome']; ?>">
 
         <label for="telefone">Telefone:</label>
-        <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="Somente números" required>
+        <input type="text" id="telefone" name="telefone" pattern="[0-9]{10,11}" placeholder="Somente números" value="<?= $usuario['telefone']; ?>">
 
         <label for="nascimento">Data de nascimento:</label>
-        <input type="date" id="nascimento" name="nascimento" required>
+        <input type="date" id="nascimento" name="nascimento" value="<?= $usuario['nascimento']; ?>">
 
         <label for="email">E-mail:</label>
-        <input type="text" id="email" name="email" required>
+        <input type="text" id="email" name="email"value="<?= $usuario['email']; ?>">
 
         <label for="senha">Senha:</label>
         <div class="senha-container">
-            <input type="password" id="senha" name="senha" required>
+            <input type="password" id="senha" name="senha" value="<?= $usuario['senha']; ?>">
             <span class="toggle-senha" onclick="toggleSenha()">👁️</span>
         </div>
 
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-            <input type="submit" value="Salvar" class="btn-cadastrar">
+            <input type="submit" name="update_usuario" value="Salvar" class="btn-cadastrar">
         </div>
     </form>
     </div>

@@ -1,6 +1,6 @@
 <?php
     session_start();
-    require 'conexao.php';
+    require_once 'conexao.php';
 
     if(isset($_POST['cadastrar'])){
         $nome = trim($_POST['nome']);
@@ -127,14 +127,14 @@
     }
 
     if (isset($_POST['update_usuario'])){
-       $usuario_id = mysqli_real_escape_string($conexao, trim($_POST['id']));
+       $usuario_id = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
        $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
        $telefone = mysqli_real_escape_string($conexao, trim($_POST['telefone']));
        $email = mysqli_real_escape_string($conexao, trim($_POST['email']));
-       $datanascto = mysqli_real_escape_string($conexao, trim($_POST['datanascto']));
+       $datanascto = mysqli_real_escape_string($conexao, trim($_POST['nascimento']));
        $senha = mysqli_real_escape_string($conexao, trim($_POST['senha']));
 
-       $sql = "UPDATE usuario SET nome = ?, telefone = ?, email = ?, datanascto = ?, senha = ? WHERE id = ?"
+       $sql = "UPDATE usuario SET nome = ?, telefone = ?, email = ?, nascimento = ?, senha = ? WHERE cpf = ?";
        $stmt = mysqli_prepare($conexao, $sql);
 
        if ($stmt){
@@ -159,5 +159,29 @@
             header('Location: usuario_view.php');
             exit;
        }
-     }
+    }
+
+    function obterTodosUsuarios($conexao){
+        $sql = "SELECT * from usuario ORDER BY nome ASC";
+        $resultado = mysqli_query($conexao, $sql);
+
+        $usuarios = [];
+        if ($resultado && mysqli_num_rows($resultado) >0){
+            while ($row = mysqli_fetch_assoc($resultado)){
+                $usuarios[]=$row;
+            } 
+        }
+
+        return $usuarios;
+    }
+    function buscarUsuarioCpf($conexao, $cpf){
+        $sql = "SELECT * from usuario WHERE cpf = '$cpf'";
+        $resultado = mysqli_query($conexao, $sql);
+
+        if (mysqli_num_rows($resultado)>0){
+            $usuario = mysqli_fetch_array($resultado);
+        }
+
+        return $usuario;  
+    }
 ?>
