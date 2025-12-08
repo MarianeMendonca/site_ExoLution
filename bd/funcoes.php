@@ -55,28 +55,75 @@
         echo $_SESSION['mensagem'];
     }
 
-    if(isset($_POST['cadastrarproduto'])){
-        $nome = trim($_POST['nome']);
-        $descricao = trim($_POST['descricao']);
-        $preco= trim($_POST['preco']);
-        $estoque = trim($_POST['estoque']);
-        $categoria = $_POST['categoria'];
 
-
-        $sql = "INSERT INTO produto (nome, descricao, preco, estoque, categoria) VALUES (?, ?, ?, ?, ?)";
-        $stmt = mysqli_prepare($conexao, $sql);
-
-        if ($stmt){
-            mysqli_stmt_bind_param($stmt, "sssss", $nome, $descricao, $preco, $estoque, $categoria);
-            if(mysqli_stmt_execute($stmt)){
-                $_SESSION['mensagem'] = "Produto criado com sucesso!";
-            }else{
-                $_SESSION['mensagem'] = "Erro ao criar o produto";
-            }
-        }else{
-            $_SESSION['mensagem'] = "Erro na formatação da query!";
-        }
+    if (isset($_POST['cadastrarproduto'])) {
+    // Inicia sessão se necessário
+    if (session_status() == PHP_SESSION_NONE) {
+        session_start();
     }
+
+    $nome = trim($_POST['nome']);
+    $descricao = trim($_POST['descricao']);
+    $preco = (float) trim($_POST['preco']);
+    $estoque = (int) trim($_POST['estoque']);
+    $categoria = $_POST['categoria'];
+
+    // TRATAR IMAGEM COMO BLOB
+    if (isset($_FILES['imagem']) && $_FILES['imagem']['error'] === UPLOAD_ERR_OK) {
+        $imagemBlob = file_get_contents($_FILES['imagem']['tmp_name']);
+        
+        // Validação de tamanho (ajuste conforme necessário, ex.: 5MB)
+        $maxSize = 5 * 1024 * 1024;  // 5MB
+        if (strlen($imagemBlob) > $maxSize) {
+            $_SESSION['mensagem'] = "Imagem muito grande. Máximo 5MB.";
+            header("Location: " . $_SERVER['HTTP_REFERER']);
+            exit;
+        }
+    } else {
+        $_SESSION['mensagem'] = "Erro ao receber a imagem: " . $_FILES['imagem']['error'];
+        header("Location: " . $_SERVER['HTTP_REFERER']);
+        exit;
+    }
+
+    // QUERY COM IMAGEM BLOB
+    $sql = "INSERT INTO produto (nome, descricao, preco, estoque, categoria, imagem)
+            VALUES (?, ?, ?, ?, ?, ?)";
+
+    $stmt = mysqli_prepare($conexao, $sql);
+
+    if ($stmt) {
+        // Tipos corretos: s, s, d, i, s, b (b para BLOB)
+        $blobPlaceholder = NULL;  // Ou '' – placeholder para o BLOB
+        mysqli_stmt_bind_param(
+            $stmt,
+            "ssdisb",  // Correção: último é 'b' para BLOB
+            $nome,
+            $descricao,
+            $preco,
+            $estoque,
+            $categoria,
+            $blobPlaceholder  // Não passe $imagemBlob aqui
+        );
+
+        // Envia os dados binários para o parâmetro BLOB (índice 5)
+        mysqli_stmt_send_long_data($stmt, 5, $imagemBlob);
+
+        if (mysqli_stmt_execute($stmt)) {
+            $_SESSION['mensagem'] = "Produto criado com sucesso!";
+        } else {
+            $_SESSION['mensagem'] = "Erro ao salvar produto: " . mysqli_stmt_error($stmt);
+        }
+
+        mysqli_stmt_close($stmt);
+    } else {
+        $_SESSION['mensagem'] = "Erro na preparação da query: " . mysqli_error($conexao);
+    }
+
+    // Redireciona de volta
+    header("Location: " . $_SERVER['HTTP_REFERER']);
+    exit;
+}
+
 
     if(isset($_POST['cadAnimal'])){
         $nome = trim($_POST['nome']);
