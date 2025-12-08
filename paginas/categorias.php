@@ -18,7 +18,7 @@
         }
     ?>
     <?php 
-        if (file_exists('../section/secCategoria.php')){
+        if (file_exists('../section/secCategoria2.php')){
             include '../section/secCategoria2.php'; 
         }
     ?>

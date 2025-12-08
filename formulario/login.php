@@ -22,11 +22,11 @@
     ?>
 
     <div class="container">
-    <form action="#" method="post"> 
+    <form action="../bd/funcoes.php" method="POST"> 
         <h2 class="titulo">Login</h2>
 
-        <label for="email">E-mail:</label>
-        <input type="text" id="email" name="email" required>
+        <label for="email">CPF:</label>
+        <input type="text" id="cpf" name="cpf" required>
 
         <label for="senha">Senha:</label>
         <div class="senha-container">
@@ -40,7 +40,7 @@
 
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
-            <input type="submit" value="Entrar" class="btn-cadastrar">
+            <input type="submit" name="login_usuario" value="Entrar" class="btn-cadastrar">
         </div>
     </form>
     </div>

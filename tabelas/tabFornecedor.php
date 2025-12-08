@@ -60,6 +60,9 @@
     <?php } else{ ?>
         <h5> Não existem fornecedores cadastrados</h3>     
     <?php } ?>
+    <div class="botoes">
+        <a href="../paginas/administracao.php">Voltar</a>
+    </div>
 </div>
 </section>
 </body>

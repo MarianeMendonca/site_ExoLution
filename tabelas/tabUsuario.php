@@ -63,6 +63,9 @@
     <?php } else{ ?>
         <h5> Não existem usuários cadastrados</h3>     
     <?php } ?>
+    <div class="botoes">
+        <a href="../paginas/administracao.php">Voltar</a>
+    </div>
 </div>
 </section>
 </body>

@@ -1,3 +1,10 @@
+<?php 
+    if (session_status() == PHP_SESSION_NONE){
+        session_start();
+    }
+
+    require_once '../bd/funcoes.php';
+?>
 <section>
 <div class="body">
     <video id="background-video" autoplay loop muted>
@@ -8,12 +15,30 @@
         <div class="profile-header">
             <img src="../imagem/perfil.png" alt="Foto do usuário" class="avatar">
             <div class="profile-info">
-                <h1>Mariane Mendonça</h1>
-                <p class="role">Tutor(a) de animais exóticos</p>
-                <span class="since">Membro desde: 2023</span>
+                <?php
+                
+                $usuario_nome = $_SESSION['usuario_nome'] ?? '';
+                $funcionario_cpf = $_SESSION['funcionario_cpf'] ?? '';
+                $funcionario_nome = $_SESSION['funcionario_nome'] ?? '';
+
+                if (empty($usuario_nome) && empty($funcionario_cpf)): ?>
+                    <h1>Usuário</h1>
+                    <p class="role">---</p>
+
+                    <button class="btn"><a href="../formulario/login.php">Login</a></button>
+                <?php elseif(empty($funcionario_cpf)): ?>
+                    <h1><?= htmlspecialchars($usuario_nome ?: 'Usuário') ?></h1>
+                    <p class="role">Tutor(a) de animais exóticos</p>
+
+                    <button class="btn"><a href="../bd/logout.php">Sair</a></button>
+                <?php else: ?>
+                    <h1><?= htmlspecialchars($funcionario_nome ?: 'Usuário') ?></h1>
+                    <p class="role">Funcionário</p>
+
+                    <button class="btn" id="adm"><a href="../paginas/administracao.php">Administração</a></button>
+                    <button class="btn"><a href="../bd/logout.php">Sair</a></button>
+                <?php endif; ?>
             </div>
-            <button class="btn" id="adm"><a href="../paginas/administracao.php">Administração</a></button>
-            <button class="btn"><a href="../formulario/edicaoUsuario.php">Editar Perfil</a></button>
         </div>
 
         <div class="grid">

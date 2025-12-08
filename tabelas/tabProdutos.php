@@ -2,7 +2,7 @@
     require_once '../bd/conexao.php';
     require_once '../bd/funcoes.php';
 
-    $usuarios = obterTodosUsuarios($conexao);
+    $produtos = obterTodosProdutos($conexao);
 ?>
 
 <!DOCTYPE html>
@@ -30,7 +30,7 @@
 </video>
   <div class="main">
     <h2>Gerenciamento de Usuários</h2>
-    <?php if(count($usuarios) > 0){ ?>
+    <?php if(count($produtos) > 0){ ?>
     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
@@ -42,18 +42,18 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <?php foreach ($usuarios as $usuario){ ?>
+                            <?php foreach ($produtos as $produto){ ?>
                                 <tr>
                                     <td><?php echo $produto['nome'] ?></td>
                                     <td><?php echo $produto['categoria'] ?></td>
                                     <td><?php echo $produto['estoque'] ?></td>
                                     <td><?php echo $produto['preco'] ?></td>
                                     <td>
-                                        <a href="../formulario/edicaoUsuario.php?cpf=<?= $usuario['cpf'] ?>" class="btn btn-warning btn-sm"> Editar</a>
+                                        <a href="../formulario/edicaoProduto.php?id=<?= $produto['id'] ?>" class="btn btn-warning btn-sm"> Editar</a>
                                        
                                         <form action="../bd/funcoes.php" method="POST" class=d-inline>
-                                            <button type="submit" onclick ="return confirm('Tem certeza que deseja excluir o usuario?');"
-                                             name= "usuario_delete" value="<?= $usuario['cpf'] ?>" class="btn btn-danger btn-sm"> Excluir
+                                            <button type="submit" onclick ="return confirm('Tem certeza que deseja excluir o produto?');"
+                                             name= "produto_delete" value="<?= $produto['id'] ?>" class="btn btn-danger btn-sm"> Excluir
                                             </button>
 
                                         </form>
@@ -65,8 +65,11 @@
                         </tbody>
                   </table>
     <?php } else{ ?>
-        <h5> Não existem usuários cadastrados</h3>     
+        <h5> Não existem produtos cadastrados</h3>     
     <?php } ?>
+    <div class="botoes">
+        <a href="../paginas/administracao.php">Voltar</a>
+    </div>
 </div>
 </section>
 </body>

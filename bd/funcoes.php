@@ -1,5 +1,7 @@
 <?php
-    session_start();
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
     require_once 'conexao.php';
 
     if(isset($_POST['cadastrar'])){
@@ -215,16 +217,20 @@
         return $usuarios;
     }
 
-    function buscarUsuarioCpf($conexao, $cpf){
-        $sql = "SELECT * from usuario WHERE cpf = '$cpf'";
-        $resultado = mysqli_query($conexao, $sql);
-
-        if (mysqli_num_rows($resultado)>0){
-            $usuario = mysqli_fetch_array($resultado);
-        }
-
-        return $usuario;  
+    function buscarUsuarioCpf($conexao, $cpf) {
+    $sql = "SELECT * FROM usuario WHERE cpf = ? LIMIT 1";
+    $stmt = mysqli_prepare($conexao, $sql);
+    if (!$stmt) return null;
+        mysqli_stmt_bind_param($stmt, "s", $cpf);
+        mysqli_stmt_execute($stmt);
+        $res = mysqli_stmt_get_result($stmt);
+        $usuario = null;
+    if ($res && mysqli_num_rows($res) > 0) {
+        $usuario = mysqli_fetch_assoc($res);
     }
+    mysqli_stmt_close($stmt);
+    return $usuario;
+}
 
     if(isset($_POST['usuario_delete'])){
         $usuario_id = mysqli_real_escape_string($conexao, trim($_POST['usuario_delete']));
@@ -254,16 +260,20 @@
         return $usuarios;
     }
 
-    function buscarFuncionarioCpf($conexao, $cpf){
-        $sql = "SELECT * from funcionario WHERE cpf = '$cpf'";
-        $resultado = mysqli_query($conexao, $sql);
-
-        if (mysqli_num_rows($resultado)>0){
-            $funcionario = mysqli_fetch_array($resultado);
-        }
-
-        return $funcionario;  
+    function buscarFuncionarioCpf($conexao, $cpf) {
+    $sql = "SELECT * FROM funcionario WHERE cpf = ? LIMIT 1";
+    $stmt = mysqli_prepare($conexao, $sql);
+    if (!$stmt) return null;
+    mysqli_stmt_bind_param($stmt, "s", $cpf);
+    mysqli_stmt_execute($stmt);
+    $res = mysqli_stmt_get_result($stmt);
+    $funcionario = null;
+    if ($res && mysqli_num_rows($res) > 0) {
+        $funcionario = mysqli_fetch_assoc($res);
     }
+    mysqli_stmt_close($stmt);
+    return $funcionario;
+}
 
     if (isset($_POST['update_funcionario'])){
        $funcionario_id = mysqli_real_escape_string($conexao, trim($_POST['cpf']));
@@ -393,4 +403,120 @@
             return false;
         }
     }
+
+    function obterTodosProdutos($conexao){
+        $sql = "SELECT * from produto ORDER BY nome ASC";
+        $resultado = mysqli_query($conexao, $sql);
+
+        $produto = [];
+        if ($resultado && mysqli_num_rows($resultado) >0){
+            while ($row = mysqli_fetch_assoc($resultado)){
+                $produto[]=$row;
+            } 
+        }
+
+        return $produto;
+    }
+
+    if(isset($_POST['produto_delete'])){
+        $produto_id = mysqli_real_escape_string($conexao, trim($_POST['produto_delete']));
+
+        $sql = "DELETE FROM produto WHERE id='$produto_id'";
+        mysqli_query($conexao, $sql);
+
+        if (mysqli_affected_rows($conexao) > 0 ){
+            header('Location: ../tabelas/tabProdutos.php');
+            return true;
+        }else{
+            return false;
+        }
+    }
+
+    function buscarProdutoId($conexao, $id){
+        $sql = "SELECT * from produto WHERE id = '$id'";
+        $resultado = mysqli_query($conexao, $sql);
+
+        if (mysqli_num_rows($resultado)>0){
+            $produto = mysqli_fetch_array($resultado);
+        }
+
+        return $produto;  
+    }
+
+    if (isset($_POST['update_produto'])){
+       $produto_id = mysqli_real_escape_string($conexao, trim($_POST['id']));
+       $nome = mysqli_real_escape_string($conexao, trim($_POST['nome']));
+       $descricao = mysqli_real_escape_string($conexao, trim($_POST['descricao']));
+       $preco = mysqli_real_escape_string($conexao, $_POST['preco']);
+       $estoque = mysqli_real_escape_string($conexao, $_POST['estoque']);
+
+       $sql = "UPDATE produto SET nome = ?, descricao = ?, preco = ?, estoque = ? WHERE id = ?";
+       $stmt = mysqli_prepare($conexao, $sql);
+
+       if ($stmt){
+            mysqli_stmt_bind_param($stmt, "ssdii", $nome, $descricao, $preco, $estoque, $produto_id);
+            mysqli_stmt_execute($stmt);
+
+            if (mysqli_affected_rows($conexao)>0){
+                $alteracao = true;
+                header('Location: ../tabelas/tabProdutos.php');
+                return $alteracao;
+            }else{
+                $alteracao = false;
+                return $alteracao;                
+            }
+        }
+    }
+
+    if (isset($_POST['login_usuario'])) {
+    // garante sessão iniciada
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+
+    $usuario_cpf = trim($_POST['cpf'] ?? '');
+    $usuario_senha = trim($_POST['senha'] ?? '');
+
+    // buscar em usuários e funcionários
+    $usuario = buscarUsuarioCpf($conexao, $usuario_cpf);
+    $funcionario = buscarFuncionarioCpf($conexao, $usuario_cpf);
+
+    // caso encontre usuário comum
+    if ($usuario !== null) {
+        $hash = $usuario['senha'] ?? null;
+        if ($hash && password_verify($usuario_senha, $hash)) {
+            $_SESSION['usuario_cpf'] = $usuario['cpf'];
+            $_SESSION['usuario_nome'] = $usuario['nome'];
+            $_SESSION['mensagem'] = "Login realizado com sucesso!";
+            header("Location: ../paginas/perfil.php");
+            exit;
+        } else {
+            $_SESSION['mensagem'] = "Senha digitada incorreta!";
+            header("Location: ../paginas/perfil.php");
+            exit;
+        }
+    }
+
+    // caso encontre funcionário (não confundir com $usuario)
+    if ($funcionario !== null) {
+        $hash = $funcionario['senha'] ?? null;
+        if ($hash && password_verify($usuario_senha, $hash)) {
+            $_SESSION['funcionario_cpf']  = $funcionario['cpf'];
+            $_SESSION['funcionario_nome'] = $funcionario['nome'];
+            $_SESSION['mensagem'] = "Login (funcionário) realizado com sucesso!";
+            header("Location: ../paginas/perfil.php");
+            exit;
+        } else {
+            $_SESSION['mensagem'] = "Senha digitada incorreta!";
+            header("Location: ../paginas/perfil.php");
+            exit;
+        }
+    }
+
+    // se chegou aqui, não encontrou nem usuário nem funcionário
+    $_SESSION['mensagem'] = "Usuário não encontrado!";
+    header("Location: ../paginas/perfil.php");
+    exit;
+}
+
 ?>
