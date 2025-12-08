@@ -3,9 +3,24 @@ html, body {
     padding: 0;
 }
 section {
-    background-color: #12c9a7;
-    padding: 80px;
-    margin-bottom: -33px;
+    margin: 0;
+    font-family: "Roboto Flex", sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+}
+
+video#background-video {
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    filter: blur(6px) brightness(0.6);
 }
 
 div.product-container {

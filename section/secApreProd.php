@@ -1,4 +1,18 @@
+<?php
+    require_once '../bd/conexao.php';
+    require_once '../bd/funcoes.php';
+
+    if (isset($_GET['id'])){
+        $produto_id = mysqli_real_escape_string($conexao, $_GET['id']);
+
+        $produto =  buscarProdutoId($conexao, $produto_id);
+    }
+?>
+
 <section>
+    <video id="background-video" autoplay loop muted>
+        <source src="../video/cachoeira2.mp4" type="video/mp4">
+    </video>
     <div class="product-container">
         <div class="row">
             <div class="col-md-6">
@@ -6,19 +20,18 @@
             </div>
             <div class="col-md-6">
                 <div class="product-details">
-                    <h1>Nome do Produto</h1>
+                    <h1><?php echo $produto['nome'] ?></h1>
                     <p class="description">
-                        Descrição detalhada do produto. Aqui você pode colocar informações sobre o animal exótico, cuidados especiais, tamanho, idade recomendada, alimentação e qualquer detalhe que ajude o tutor a tomar a decisão.
+                        <?php echo $produto['descricao'] ?>
                     </p>
                     <div class="product-info">
-                        <div><span>Preço:</span> R$ 250,00</div>
-                        <div><span>Categoria:</span> Répteis, Brinquedos</div>
-                        <div><span>Disponibilidade:</span> Em estoque</div>
-                        <div><span>Cuidados:</span> Necessita de terrário aquecido, alimentação diária com insetos vivos.</div>
+                        <div><span>Preço:</span> R$ <?php echo $produto['preco'] ?></div>
+                        <div><span>Categoria:</span> <?php echo $produto['categoria'] ?></div>
+                        <div><span>Disponibilidade:</span> <?php echo $produto['estoque'] ?></div>
                     </div>
                     <div class="button">
-                        <button class="btn carrinho">Adicionar ao Carrinho</button>
-                        <button class="btn buy">Comprar Agora</button>
+                        <button class="btn" style="background-color: #969696ff;"><a href="../paginas/produtos.php">Voltar</a></button>
+                        <button class="btn buy">Adicionar ao Carrinho</button>
                     </div>
                 </div>
             </div>
