@@ -40,10 +40,11 @@
         <label for="categoria">Categoria:</label>
         <select id="categoria" name="categoria" required>
         <option value="">-- Selecione --</option>
+        <option value="aquarios/terrarios">Aquários/Terrários</option>
         <option value="racao">Ração</option>
         <option value="brinquedos">Brinquedos</option>
         <option value="roupas">Roupas</option>
-        <option value="coleiras">Coleiras</option>
+        <option value="higiene">Higiene</option>
         <option value="outros">Outros</option>
         </select>
 

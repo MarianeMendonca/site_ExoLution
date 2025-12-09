@@ -16,7 +16,7 @@
     <div class="product-container">
         <div class="row">
             <div class="col-md-6">
-                <img src="../imagem/brinquedos.png" alt="Nome do Produto" class="product-image">
+                <img src="data:image/jpeg;base64,<?php echo base64_encode($produto['imagem']); ?>" style="width: 440px">
             </div>
             <div class="col-md-6">
                 <div class="product-details">

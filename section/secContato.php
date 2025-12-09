@@ -37,7 +37,7 @@
                 <li><strong>📞 Telefone:</strong> (11) 3456-7890</li>
                 <li><strong>📱 WhatsApp:</strong> <a href="https://wa.me/5511999999999" target="_blank">(11) 99999-9999</a></li>
                 <li><strong>✉️ E-mail:</strong> <a href="mailto:contato@exolution.com">contato@exolution.com</a></li>
-                <li><strong>📍 Endereço:</strong> Av. dos Exóticos, 123 - São Paulo, SP</li>
+                <li><strong>📍 Endereço:</strong> Av. dos Exóticos, 123 - Passos, MG</li>
             </ul>
         </div>
 

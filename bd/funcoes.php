@@ -469,54 +469,53 @@
     }
 
     if (isset($_POST['login_usuario'])) {
-    // garante sessão iniciada
-    if (session_status() === PHP_SESSION_NONE) {
-        session_start();
-    }
-
-    $usuario_cpf = trim($_POST['cpf'] ?? '');
-    $usuario_senha = trim($_POST['senha'] ?? '');
-
-    // buscar em usuários e funcionários
-    $usuario = buscarUsuarioCpf($conexao, $usuario_cpf);
-    $funcionario = buscarFuncionarioCpf($conexao, $usuario_cpf);
-
-    // caso encontre usuário comum
-    if ($usuario !== null) {
-        $hash = $usuario['senha'] ?? null;
-        if ($hash && password_verify($usuario_senha, $hash)) {
-            $_SESSION['usuario_cpf'] = $usuario['cpf'];
-            $_SESSION['usuario_nome'] = $usuario['nome'];
-            $_SESSION['mensagem'] = "Login realizado com sucesso!";
-            header("Location: ../paginas/perfil.php");
-            exit;
-        } else {
-            $_SESSION['mensagem'] = "Senha digitada incorreta!";
-            header("Location: ../paginas/perfil.php");
-            exit;
+        // garante sessão iniciada
+        if (session_status() === PHP_SESSION_NONE) {
+            session_start();
         }
-    }
 
-    // caso encontre funcionário (não confundir com $usuario)
-    if ($funcionario !== null) {
-        $hash = $funcionario['senha'] ?? null;
-        if ($hash && password_verify($usuario_senha, $hash)) {
-            $_SESSION['funcionario_cpf']  = $funcionario['cpf'];
-            $_SESSION['funcionario_nome'] = $funcionario['nome'];
-            $_SESSION['mensagem'] = "Login (funcionário) realizado com sucesso!";
-            header("Location: ../paginas/perfil.php");
-            exit;
-        } else {
-            $_SESSION['mensagem'] = "Senha digitada incorreta!";
-            header("Location: ../paginas/perfil.php");
-            exit;
+        $usuario_cpf = trim($_POST['cpf'] ?? '');
+        $usuario_senha = trim($_POST['senha'] ?? '');
+
+        // buscar em usuários e funcionários
+        $usuario = buscarUsuarioCpf($conexao, $usuario_cpf);
+        $funcionario = buscarFuncionarioCpf($conexao, $usuario_cpf);
+
+        // caso encontre usuário comum
+        if ($usuario !== null) {
+            $hash = $usuario['senha'] ?? null;
+            if ($hash && password_verify($usuario_senha, $hash)) {
+                $_SESSION['usuario_cpf'] = $usuario['cpf'];
+                $_SESSION['usuario_nome'] = $usuario['nome'];
+                $_SESSION['mensagem'] = "Login realizado com sucesso!";
+                header("Location: ../paginas/perfil.php");
+                exit;
+            } else {
+                $_SESSION['mensagem'] = "Senha digitada incorreta!";
+                header("Location: ../paginas/perfil.php");
+                exit;
+            }
         }
+
+        // caso encontre funcionário (não confundir com $usuario)
+        if ($funcionario !== null) {
+            $hash = $funcionario['senha'] ?? null;
+            if ($hash && password_verify($usuario_senha, $hash)) {
+                $_SESSION['funcionario_cpf']  = $funcionario['cpf'];
+                $_SESSION['funcionario_nome'] = $funcionario['nome'];
+                $_SESSION['mensagem'] = "Login (funcionário) realizado com sucesso!";
+                header("Location: ../paginas/perfil.php");
+                exit;
+            } else {
+                $_SESSION['mensagem'] = "Senha digitada incorreta!";
+                header("Location: ../paginas/perfil.php");
+                exit;
+            }
+        }
+
+        // se chegou aqui, não encontrou nem usuário nem funcionário
+        $_SESSION['mensagem'] = "Usuário não encontrado!";
+        header("Location: ../paginas/perfil.php");
+        exit;
     }
-
-    // se chegou aqui, não encontrou nem usuário nem funcionário
-    $_SESSION['mensagem'] = "Usuário não encontrado!";
-    header("Location: ../paginas/perfil.php");
-    exit;
-}
-
 ?>

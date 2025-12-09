@@ -20,7 +20,7 @@
                 <?php foreach ($produtos as $produto){ ?>
                 <div class="card">
                     <a href="#">
-                        <img src="data:image/png;base64,<?php echo base64_encode($produto['imagem']); ?>">
+                        <img src="data:image/jpeg;base64,<?php echo base64_encode($produto['imagem']); ?>">
                     </a>
                     <div class="inf" style="background: rgba(167, 180, 178, 0.3); ">
                         <p class="card-text" style="color: black; font-size: 25px; text-align: center;">

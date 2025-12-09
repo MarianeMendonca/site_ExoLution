@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto Flex', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+#cabecalho {
+    background-color: #34d399;
+    padding: 15px 0;
+    text-align: center;
+}
+
+#cabecalho img {
+    width: 150px;
+}
+
+#carrinho {
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #34d399;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.produtos {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.produto {
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.produto img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.detalhes {
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.detalhes h2 {
+    color: #a7f3d0;
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.detalhes p {
+    color: white;
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.remover {
+    background-color: #e11d48;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.remover:hover {
+    background-color: #9e1237;
+}
+
+.resumo {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.resumo p {
+    color: #a7f3d0;
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+.finalizar {
+    background-color: #34d399;
+    color: white;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 10px;
+    font-size: 18px;
+    cursor: pointer;
+}
+
+.finalizar:hover {
+    background-color: #2e9d7d;
+}
+
+footer {
+    background-color: #34d399;
+    padding: 15px 0;
+    text-align: center;
+    margin-top: 50px;
+    color: white;
+    font-size: 14px;
+}
