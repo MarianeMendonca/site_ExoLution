@@ -12,7 +12,7 @@
 </head>
 <body>
     <video id="background-video" autoplay loop muted>
-        <source src="../video/floresta.mp4" type="video/mp4">
+        <source src="../video/ondas.mp4" type="video/mp4">
     </video>
 
     <?php

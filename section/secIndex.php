@@ -2,7 +2,7 @@
     <div class="row">
         <div id="menu">
             <div class="col-12">
-                <img src="imagem/fundoP.png" alt="habitats">
+                <img src="imagem/fundo2.png" alt="habitats">
             </div>
         </div>
         <div class="col-12 nichos">
