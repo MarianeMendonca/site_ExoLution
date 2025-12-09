@@ -25,7 +25,6 @@
     <form action="#" method="post">
         <h2 class="titulo">Confirmação de Pedido</h2>
 
-        <!-- Produtos comprados -->
         <fieldset>
             <legend>Produtos</legend>
             <ul class="lista-produtos">
@@ -38,7 +37,6 @@
         <fieldset>
     <legend>Endereço de Entrega</legend>
 
-            <!-- Endereços salvos -->
             <div class="enderecos-salvos">
                 <label>
                     <input type="radio" name="endereco" value="1" required>
@@ -50,14 +48,12 @@
                 </label>
             </div>
 
-            <!-- Novo endereço -->
             <div class="novo-endereco">
                 <a href="endereco.php" class="btn-novo-endereco">➕ Cadastrar novo endereço</a>
             </div>
         </fieldset>
 
 
-        <!-- Pagamento -->
         <fieldset>
             <legend>Forma de Pagamento</legend>
             <select name="pagamento" id="pagamento" required>
@@ -79,7 +75,6 @@
             </div>
         </fieldset>
 
-        <!-- Botões -->
         <div class="botoes">
             <button type="button" class="btn-voltar" onclick="history.back()">Voltar</button>
             <input type="submit" value="Confirmar Pedido" class="btn-cadastrar">
@@ -94,7 +89,6 @@
     ?>
 
     <script>
-        // Exibir campos do cartão só quando selecionado
         document.getElementById("pagamento").addEventListener("change", function() {
             const detalhesCartao = document.getElementById("cartao-detalhes");
             if (this.value === "cartao") {

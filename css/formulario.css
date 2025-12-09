@@ -235,8 +235,6 @@ ul.lista-produtos li {
     display: none; 
 }
 
-
-/* Animação de entrada */
 @keyframes fadeIn {
     from {
         opacity: 0;

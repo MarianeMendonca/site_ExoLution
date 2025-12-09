@@ -3,7 +3,6 @@
     <h1 id="admin-title" class="titulo">Administração</h1>
 
     <div class="grid-categorias">
-      <!-- Usuários -->
       <div class="card admin-card usuario" role="group" aria-label="Usuários - Gerenciar">
         <div class="card-border"></div>
         <div class="card-inner">
@@ -38,7 +37,6 @@
         </div>
       </div>
 
-      <!-- Funcionários -->
       <div class="card admin-card funcionarios" role="group" aria-label="Funcionários - Gerenciar">
         <div class="card-border"></div>
         <div class="card-inner">
@@ -73,7 +71,6 @@
         </div>
       </div>
 
-      <!-- Fornecedores -->
       <div class="card admin-card fornecedores" role="group" aria-label="Fornecedores - Gerenciar">
         <div class="card-border"></div>
         <div class="card-inner">
@@ -108,7 +105,6 @@
         </div>
       </div>
 
-      <!-- Encomendas -->
       <div class="card admin-card encomendas" role="group" aria-label="Encomendas - Gerenciar">
         <div class="card-border"></div>
         <div class="card-inner">
@@ -138,7 +134,6 @@
         </div>
       </div>
 
-      <!-- Produtos -->
       <div class="card admin-card produtos" role="group" aria-label="Produtos - Gerenciar">
         <div class="card-border"></div>
         <div class="card-inner">
@@ -173,7 +168,6 @@
         </div>
       </div>
 
-      <!-- Compras -->
       <div class="card admin-card outros" role="group" aria-label="Compras - Gerenciar">
         <div class="card-border"></div>
         <div class="card-inner">

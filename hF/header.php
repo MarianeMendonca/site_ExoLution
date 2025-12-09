@@ -4,7 +4,7 @@
                 <div class="nome">
 
                     <?php
-                        $pag = basename($_SERVER['PHP_SELF']); // retorna só o nome, ex: "cadastro.php"
+                        $pag = basename($_SERVER['PHP_SELF']); 
                         if($pag === 'index.php'){
                             echo '<img src="imagem/logo.png" alt="logo">';
                         } else{

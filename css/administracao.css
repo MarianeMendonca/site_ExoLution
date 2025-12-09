@@ -1,4 +1,3 @@
-/* Variáveis e reset mínimo */
 :root{
   --accent:#12c9a7;
   --accent-2:#00b894;
@@ -10,16 +9,12 @@
 *{box-sizing:border-box}
 html,body{margin:0;padding:0}
 
-/* Section */
 .admin-section{background: linear-gradient(180deg, rgba(245,245,220,0.98) 0%, rgba(240,240,232,0.98) 100%); color:#071; padding:36px 16px}
 
-/* Container */
 .categorias{max-width:1200px;margin:0 auto;padding:42px 18px;border-radius:12px}
 
-/* Title */
 .titulo{font-family:"Delius",cursive;color:var(--accent);font-size:34px;margin:6px 0 22px 0}
 
-/* Grid */
 .grid-categorias{
   display:grid;
   grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
@@ -27,7 +22,6 @@ html,body{margin:0;padding:0}
   align-items:stretch;
 }
 
-/* Card base */
 .admin-card{
   position:relative;
   display:block;
@@ -40,7 +34,6 @@ html,body{margin:0;padding:0}
   outline: none;
 }
 
-/* Animated border accent */
 .admin-card .card-border{
   position:absolute;
   inset: -2px;
@@ -53,7 +46,6 @@ html,body{margin:0;padding:0}
   pointer-events:none;
 }
 
-/* Inner "glass" content area */
 .admin-card .card-inner{
   position:relative;
   background: var(--card-bg);
@@ -67,7 +59,6 @@ html,body{margin:0;padding:0}
   backdrop-filter: blur(6px);
 }
 
-/* meta: icon + titles */
 .card-meta{display:flex;gap:12px;align-items:center}
 .card-meta .icon{
   width:48px;
@@ -82,11 +73,9 @@ html,body{margin:0;padding:0}
 }
 .card-meta svg{display:block;}
 
-/* titles */
 .titles h2{margin:0;font-size:1.05rem;color:#073; font-weight:700}
 .titles .sub{margin:2px 0 0 0;font-size:.88rem;color:#6b6b6b}
 
-/* badges / stats */
 .card-stats{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
 .badge{
   display:inline-block;padding:6px 10px;border-radius:999px;font-weight:700;font-size:.85rem;background:#f3f4f6;color:#071;
@@ -98,7 +87,6 @@ html,body{margin:0;padding:0}
 .badge.success{background:#e6fff5;color:#0a6b4d}
 .badge.info{background:#eef7ff;color:#0a4e78}
 
-/* action buttons (hidden by default, revealed on hover/focus) */
 .card-actions{
   display:flex;
   gap:8px;
@@ -113,13 +101,11 @@ html,body{margin:0;padding:0}
 }
 .action:hover{transform:translateY(-3px);background:rgba(1,17,14,0.06)}
 
-/* reveal effects */
 .admin-card:hover .card-border,
 .admin-card:focus-within .card-border{opacity:1;transform:scale(1)}
 .admin-card:hover .card-actions,
 .admin-card:focus-within .card-actions{opacity:1;transform:translateY(0)}
 
-/* subtle background image per type (optional) */
 .usuario .card-inner{background-image: linear-gradient(45deg, rgba(18,201,167,0.02), rgba(0,184,148,0.01))}
 .funcionarios .card-inner{background-image: linear-gradient(45deg, rgba(43,111,135,0.02), rgba(43,111,135,0.01))}
 .fornecedores .card-inner{background-image: linear-gradient(45deg, rgba(106,90,154,0.02), rgba(106,90,154,0.01))}
@@ -127,10 +113,8 @@ html,body{margin:0;padding:0}
 .produtos .card-inner{background-image: linear-gradient(45deg, rgba(31,122,107,0.02), rgba(31,122,107,0.01))}
 .outros .card-inner{background-image: linear-gradient(45deg, rgba(166,77,106,0.02), rgba(166,77,106,0.01))}
 
-/* focus visible */
 .admin-card:focus-visible{outline:3px solid rgba(18,201,167,0.12);outline-offset:6px}
 
-/* mobile adjustments */
 @media (max-width:720px){
   .card-inner{padding:12px}
   .card-meta .icon{width:44px;height:44px}

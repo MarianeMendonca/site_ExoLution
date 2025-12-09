@@ -82,10 +82,10 @@
             const olho = document.querySelector(".toggle-senha");
             if (senha.type === "password") {
                 senha.type = "text";
-                olho.textContent = "🙈"; // muda ícone quando visível
+                olho.textContent = "🙈"; 
             } else {
                 senha.type = "password";
-                olho.textContent = "👁️"; // volta pro olho normal
+                olho.textContent = "👁️"; 
             }
         }
     </script>

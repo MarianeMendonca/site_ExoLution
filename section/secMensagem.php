@@ -16,7 +16,6 @@
     <div class="chat-body" aria-live="polite">
         <div class="message from-bio">
             <div class="nome"><strong>Dr. Rafael — Biólogo</strong></div>
-            <!--Inicio padrão-->
             Olá! Em que posso ajudar hoje? Por favor, descreva o animal (espécie, idade, alimentação) e o comportamento observado.
             <div class="time">09:02</div>
         </div>
